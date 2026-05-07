@@ -1,0 +1,160 @@
+# CONTENIDO COMERCIAL - TALENTOPOLIS ( Dossier B2B )
+# Última Actualización: 2026-05-06
+# Sincronizado con index.html (Layout 2x3 Workflow, 2x4 Services)
+
+================================================================================
+
+### SECCIÓN 1: HERO
+---
+TAGLINE: EL FUTURO DEL TRABAJO ES HOY
+TÍTULO: Convertimos ideas en contenido audiovisual de alto impacto para expertos y marcas
+SUBTÍTULO: Somos una productora audiovisual y medio multiplataforma que diseña, produce y distribuye podcasts, video podcasts, cápsulas y contenidos para marcas, líderes y organizaciones que buscan posicionar su conocimiento
+
+================================================================================
+
+### SECCIÓN 2: ABOUT (Quiénes Somos)
+---
+LABEL: Quiénes Somos
+TÍTULO: El punto de encuentro entre la mirada editorial y la capacidad técnica
+PÁRRAFO 1: Ayudamos a empresas, instituciones, líderes y expertos a transformar su conocimiento en contenidos profesionales, visibles y reutilizables en múltiples canales
+PÁRRAFO 2: Como medio multiplataforma y productora audiovisual, no solo grabamos: conceptualizamos, ordenamos editorialmente, producimos, editamos y distribuimos. Combinamos una mirada estratégica con la agilidad técnica necesaria para el ecosistema digital actual
+
+MÉTRICAS (Validar para envío):
+1. Seguidores: +14K
+2. Programas/PodCast: +10
+3. Views: +1.3M
+4. Follower RR.SS.: +7000
+5. Likes: +15K
+6. Hrs de visualización: +35K
+
+================================================================================
+
+### SECCIÓN 3: SERVICES (Servicios)
+---
+LABEL: Servicios
+TÍTULO: Todo lo que necesitas para comunicar con impacto
+SUBTÍTULO: Desde la conceptualización hasta la distribución final, somos tu partner integral de contenido audiovisual
+
+LISTADO (Layout 2 filas x 4 columnas):
+1. Tu propio podcast: Diseño editorial, grabación, edición, publicación y cápsulas para redes, con una producción integral de principio a fin
+2. Producción audiovisual: Videos corporativos, entrevistas, cápsulas, reels, spots y piezas audiovisuales listas para publicar
+3. Estudio de grabación: Espacio profesional para grabar podcasts, entrevistas y video podcasts. Incluye producción de Cursos E-Learning (Valor x hora)
+4. Cobertura de eventos: Registro audiovisual, entrevistas, cápsulas resumen, piezas para redes y contenido post evento
+5. Media Partner: Alianzas estratégicas para cobertura integral y Producción de Cursos E-Learning con alcance multiplataforma
+6. Auspicios y patrocinios: Integración de marca en programas, cápsulas o temporadas con presencia editorial y distribución digital
+7. Alianzas comerciales: Desarrollo de formatos, temporadas y contenidos junto a marcas, empresas e instituciones
+8. Manejo de redes sociales: Gestión estratégica de comunidades, creación de contenido diario y optimización de presencia digital
+
+LO QUE RECIBE EL CLIENTE:
+- ✅ Episodios completos (Audio/Video)
+- ✅ Cápsulas verticales (Reels/TikTok/Short)
+- ✅ Pauta editorial y guiones
+- ✅ Piezas gráficas y miniaturas
+- ✅ Grabación y postproducción
+- ✅ Publicación y distribución
+
+================================================================================
+
+### SECCIÓN 4: WORKFLOW (Proceso)
+---
+LABEL: Proceso
+TÍTULO: ¿Cómo trabajamos?
+SUBTÍTULO: Un proceso claro y profesional de principio a fin
+
+PASOS (Layout 2x3 - Flujo Cíclico):
+1. Diagnóstico y objetivo: Definimos audiencia, propósito y mensaje central del contenido
+2. Diseño editorial: Construimos pauta, formato y línea narrativa estratégica
+3. Producción: Grabamos con estándar profesional y dirección técnica
+4. Postproducción y piezas: Editamos episodios, cápsulas y piezas gráficas
+5. Publicación y distribución: Preparamos y lanzamos el contenido en canales digitales
+6. Control calidad: Evaluamos y mejoramos continuamente los contenidos
+
+================================================================================
+
+### SECCIÓN 5: SHOWCASE (Producciones Destacadas)
+---
+LABEL: Showcase
+TÍTULO: Producciones destacadas
+SUBTÍTULO: Ejemplos de nuestra calidad de conversación, producción y formato multiplataforma
+
+VIDEOS:
+1. Profesor Maza - Organizaciones del Mañana
+   URL: https://www.youtube.com/watch?v=C3cv7OTFJ5w
+2. Javiera Quiroga - Organizaciones del Mañana
+   URL: https://www.youtube.com/watch?v=hZAw3KznyIU
+3. Francisco Ackermann - Organizaciones del Mañana
+   URL: https://www.youtube.com/watch?v=uL6BFyoD030
+4. Lo mejor de Mujer Sin Pausa - Mujer Sin Pausa
+   URL: https://www.youtube.com/watch?v=RaZRj2XN_qQ&list=PLRS8xZ-8eLGWF8sMDm_bvUyyYoxnnxQGE&index=1
+5. Andrés Muñoz - Ciso's Club
+   URL: https://www.youtube.com/watch?v=hXjtDBgIFcI
+6. Ricardo Mewes - Organizaciones del Mañana
+   URL: https://www.youtube.com/watch?v=0DeS4xmLVH0
+
+================================================================================
+
+### SECCIÓN 6: PROGRAMS (Nuestros Programas)
+---
+LABEL: Programas
+TÍTULO: Nuestros programas y formatos
+SUBTÍTULO: Cada formato está diseñado para conectar con audiencias específicas a través de narrativas sólidas y producción de alta calidad
+
+LISTADO DE PROGRAMAS:
+1. Organizaciones del Mañana: Exploramos tendencias que están redefiniendo la forma en que trabajamos y nos relacionamos hoy para el futuro
+2. Del Aula a la Cancha: El puente entre la formacion academia y el mundo laboral real Co-producion con Universidad Santo Tomás
+3. Mujeres sin Pausa: Conversaciones con mujeres líderes que están transformando sus industrias y entornos
+4. CoffeeBreak con Talento: Conversaciones relajadas y auténticas con talentos diversos en un formato cercano y dinámico
+5. Mujer Hoy: Sin Límites: Un espacio para potenciar el liderazgo femenino y la equidad en el mundo corporativo
+6. Conocimiento Encapsulado: Píldoras de aprendizaje y contenido experto en formatos breves y de alto impacto
+7. Kolumna Laboral: Análisis y opinión sobre las tendencias del mercado laboral chileno y latinoamericano
+8. CISO's Club: Espacio exclusivo para líderes de ciberseguridad, analizando riesgos y tendencias globales
+9. Finanzas del Futuro: Análisis y proyecciones sobre el mundo económico y nuevas tendencias financieras en activos digitales
+
+================================================================================
+
+### SECCIÓN 7: COMUNICARTE (Próximo Lanzamiento)
+---
+TÍTULO: ComunicArte - Próximo Lanzamiento
+DESCRIPCIÓN: Programa conducido por Macarena Saavedra, periodista especializada en comunicación estratégica y liderazgo. Un espacio donde la conversación fluye entre la cultura, el arte y el pensamiento ejecutivo.
+
+INVITADOS DESTACADOS:
+- Mónica Rincón: Periodista y conductora CNN Chile. Referente del periodismo de opinión.
+- Francisco Melo: Actor y Conductor de cine, teatro y tv. Gran narrador de historias.
+- Dra. Paula Daza: Médico Cirujano y Ex Subsecretaria de salud publica.
+
+================================================================================
+
+### SECCIÓN 8: GALERÍA DE INVITADOS
+---
+TÍTULO: Nuestros invitados más destacados
+BAJADA: Una pequeña mirada de lo que son nuestros invitados que hemos tenido presentes en los distintos programas
+RECURSOS: Imágenes de la carpeta "Fotos_para_el_brochure"
+
+================================================================================
+
+### SECCIÓN 9: EQUIPO
+---
+INTEGRANTES:
+1. Andrés Cardemil: Dirección Ejecutiva / Conducción
+2. Claudina Villanueva: Producción Ejecutiva Comercial
+3. Lucas Núñez: Community Manager
+4. Freddy Alexis: Periodista
+
+================================================================================
+
+### SECCIÓN 10: CONTACTO Y REDES
+---
+CTA: Conversemos sobre tu próximo podcast o contenido audiovisual
+SUB-CTA: Te ayudamos a transformar tu conocimiento, marca o experiencia en un formato profesional, visible y distribuible
+
+DATOS DE CONTACTO:
+- WhatsApp: +569 4047 8605
+- Email: contacto@talentopolis.cl
+- Dirección: Antonio Bellet 444, Of. 203, Providencia, Santiago, Chile
+
+REDES SOCIALES (Orden en Footer):
+1. YouTube
+2. Instagram
+3. LinkedIn
+4. Spotify
+5. Facebook

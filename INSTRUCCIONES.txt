@@ -1,0 +1,218 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                    GUÍA: SISTEMA DE SINCRONIZACIÓN TXT→HTML                     ║
+║                         Talentópolis - Mayo 2026                                 ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+📋 ¿QUÉ ES ESTO?
+═════════════════════════════════════════════════════════════════════════════════
+Un sistema que permite editar TODOS los textos de tu página en UN SOLO archivo TXT,
+y luego actualizar automáticamente el HTML con un clic (sin tocar código).
+
+
+🎯 CÓMO FUNCIONA
+═════════════════════════════════════════════════════════════════════════════════
+
+1. EDITA EL TXT
+   ├─ Abre: textos_talentopolis.txt
+   ├─ Busca la sección que quieras cambiar
+   ├─ Modifica SOLO el texto (entre los dos puntos y la siguiente línea)
+   └─ Guarda el archivo
+
+2. SINCRONIZA AL HTML
+   ├─ Abre PowerShell en esta carpeta
+   ├─ Escribe: python sync_textos.py
+   ├─ Presiona ENTER
+   └─ ¡Listo! El HTML se actualiza automáticamente
+
+3. VER LOS CAMBIOS
+   └─ Recarga tu navegador (Ctrl+F5 para limpiar caché)
+
+
+📂 ARCHIVOS DEL SISTEMA
+═════════════════════════════════════════════════════════════════════════════════
+
+📄 textos_talentopolis.txt
+   → El archivo maestro con TODOS los textos organizados por sección
+   → AQUÍ es donde EDITAS
+
+🐍 sync_textos.py
+   → El script que sincroniza TXT → HTML
+   → Lo ejecutas después de editar textos
+
+🌐 index.html
+   → Tu página web
+   → Se actualiza automáticamente
+
+💾 index_backup.html
+   → Copia de seguridad (se crea cada vez que sincronizas)
+   → Úsalo si algo sale mal
+
+
+🔧 CÓMO EDITAR LOS TEXTOS
+═════════════════════════════════════════════════════════════════════════════════
+
+ESTRUCTURA DEL TXT:
+
+### SECCIÓN X: [NOMBRE]
+---
+ETIQUETA:
+Tu texto aquí
+
+OTRA_ETIQUETA:
+Tu texto aquí
+
+
+REGLAS IMPORTANTES:
+───────────────────────
+✅ DO - Haz esto:
+   • Edita SOLO el contenido después del ":"
+   • Mantén la estructura con las etiquetas
+   • Guarda como UTF-8 (Sin BOM)
+   • Usa saltos de línea si necesitas multiple párrafos
+
+❌ DON'T - NO hagas esto:
+   • NO cambies los nombres de las etiquetas (ej: "TITULO" → "TITLE")
+   • NO elimines las líneas de "---"
+   • NO elimines las líneas "### SECCIÓN"
+   • NO uses caracteres especiales que rompan el código
+
+
+📝 EJEMPLO DE EDICIÓN
+═════════════════════════════════════════════════════════════════════════════════
+
+ANTES:
+───────
+TAGLINE:
+EL FUTURO DEL TRABAJO ES HOY
+
+DESPUÉS:
+────────
+TAGLINE:
+EL FUTURO DEL CONTENIDO ES HOY
+
+
+🚀 GUÍA PASO A PASO
+═════════════════════════════════════════════════════════════════════════════════
+
+PASO 1: Abre Notepad++ o tu editor favorito
+        └─ Archivo → Abrir → textos_talentopolis.txt
+
+PASO 2: Busca la sección que quieres editar
+        └─ Usa Ctrl+F para buscar rápido
+
+PASO 3: Edita el texto
+        Ejemplo:
+        ┌─────────────────────────────────────────┐
+        │ ANTES:                                  │
+        │ HEADLINE:                               │
+        │ Convertimos ideas en contenido...       │
+        │                                         │
+        │ DESPUÉS:                                │
+        │ HEADLINE:                               │
+        │ Transformamos tu visión en podcasts     │
+        │                                         │
+        └─────────────────────────────────────────┘
+
+PASO 4: Guarda (Ctrl+S)
+
+PASO 5: Abre PowerShell/Cmd en la carpeta
+        ├─ Shift + Click derecho en la carpeta
+        ├─ Selecciona "Abrir PowerShell aquí"
+        └─ (O escribe: cd C:\Users\...\TALENTOPOLIS)
+
+PASO 6: Ejecuta el script
+        └─ python sync_textos.py
+
+PASO 7: Espera el mensaje "✅ SINCRONIZACIÓN COMPLETADA"
+
+PASO 8: Recarga el navegador (Ctrl+F5)
+
+PASO 9: ¡Disfruta los cambios! 🎉
+
+
+⚠️ SOLUCIÓN DE PROBLEMAS
+═════════════════════════════════════════════════════════════════════════════════
+
+ERROR: "No se encontró Python"
+───────────────────────────────
+Solución:
+  1. Instala Python desde: https://www.python.org/downloads/
+  2. Marca la opción "Add Python to PATH"
+  3. Reinicia PowerShell
+
+ERROR: "No se encontró el archivo textos_talentopolis.txt"
+──────────────────────────────────────────────────────────
+Solución:
+  • Verifica que el archivo esté en la carpeta TALENTOPOLIS
+  • Comprueba que el path en sync_textos.py sea correcto
+
+ERROR: Los cambios no aparecen en el navegador
+──────────────────────────────────────────────
+Solución:
+  • Recarga con Ctrl+F5 (no solo F5)
+  • Espera 5 segundos
+  • Cierra el navegador completamente y reabre
+
+
+🔐 SEGURIDAD
+═════════════════════════════════════════════════════════════════════════════════
+
+✅ BACKUP AUTOMÁTICO:
+   • Cada vez que sincronizas, se crea "index_backup.html"
+   • Si algo falla, puedes restaurar desde el backup
+
+✅ VERSIÓN SEGURA:
+   • El script NUNCA elimina el HTML
+   • Solo reemplaza el texto específico
+   • El código HTML original se mantiene intacto
+
+
+📞 SOPORTE
+═════════════════════════════════════════════════════════════════════════════════
+
+Si necesitas actualizar otras secciones específicas:
+  1. Documenta qué texto quieres cambiar
+  2. Verifica que esté en el TXT con la etiqueta correcta
+  3. Ejecuta el script
+
+
+💡 TIPS PRO
+═════════════════════════════════════════════════════════════════════════════════
+
+ATAJO 1: Guardar y sincronizar en un comando
+──────────────────────────────────────────────
+Crea un archivo batch llamado "actualizar.bat":
+
+    @echo off
+    echo Guardando cambios...
+    python sync_textos.py
+    echo.
+    echo ✅ Hecho! Recarga el navegador con Ctrl+F5
+    pause
+
+Luego solo double-click en el archivo.
+
+
+ATAJO 2: Buscar y reemplazar en todo el TXT
+────────────────────────────────────────────
+En tu editor:
+  • Notepad++: Ctrl+H
+  • VSCode: Ctrl+H
+  • Editor de Windows: Ctrl+H
+
+
+AUTOMATIZACIÓN FUTURA:
+──────────────────────
+Si necesitas hacer esto muy frecuentemente:
+  1. Instala un script que monitoree cambios
+  2. Sincroniza automáticamente cada X minutos
+  3. (Puedo ayudarte a configurar esto)
+
+
+═════════════════════════════════════════════════════════════════════════════════
+
+¡Listo para empezar! 🚀
+
+Cualquier duda o problema, avísame y mejoraré el sistema.
+
+═════════════════════════════════════════════════════════════════════════════════

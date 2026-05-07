@@ -1,0 +1,10 @@
+assets/Videos_para_brochure/
+brochure_sin_pdf_descargable_V1.0/
+assets/Fotos_para_el_brochure_BACKUP/
+*.HEIC
+*.heic
+*.mp4
+!assets/recursos_comunicArte/macarena comunicarte version drone.mp4
+!assets/recursos_comunicArte/Fondo Comunicarte Video Macarena.mp4
+.DS_Store
+Thumbs.db

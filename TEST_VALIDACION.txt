@@ -1,0 +1,269 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                             ║
+║                         🧪 TEST DE VALIDACIÓN                              ║
+║                    Verifica que todo esté funcionando                       ║
+║                                                                             ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+
+📋 CHECKLIST PRE-SINCRONIZACIÓN
+═══════════════════════════════════════════════════════════════════════════
+
+Antes de ejecutar por primera vez, verifica:
+
+☐ Python está instalado
+  └─ Comando: python --version
+  └─ Debe mostrar: Python 3.X.X
+
+☐ Archivo textos_talentopolis.txt existe
+  └─ Ubicación: TALENTOPOLIS\textos_talentopolis.txt
+  └─ Tamaño: ~15KB
+
+☐ Archivo sync_textos.py existe
+  └─ Ubicación: TALENTOPOLIS\sync_textos.py
+  └─ Tamaño: ~5KB
+
+☐ Archivo index.html existe
+  └─ Ubicación: TALENTOPOLIS\index.html
+  └─ Tamaño: ~20KB
+
+☐ PowerShell o Cmd está disponible
+  └─ En Windows: Shift + Click derecho en carpeta
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+🧪 PRUEBA #1: VERIFICAR ARCHIVOS
+─────────────────────────────────
+
+En PowerShell, en la carpeta TALENTOPOLIS, ejecuta:
+
+```powershell
+ls -la
+```
+
+Deberías ver estos archivos:
+  ✓ textos_talentopolis.txt
+  ✓ sync_textos.py
+  ✓ index.html
+  ✓ styles.css
+  ✓ QUICK_START.txt
+  ✓ INSTRUCCIONES.txt
+  ✓ README.md
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+🧪 PRUEBA #2: VERIFICAR PYTHON
+───────────────────────────────
+
+En PowerShell, ejecuta:
+
+```powershell
+python --version
+```
+
+Deberías ver algo como:
+  Python 3.10.0 (o superior)
+
+Si ves "No se encontró":
+  1. Instala Python: https://www.python.org/downloads/
+  2. Marca "Add Python to PATH"
+  3. Reinicia PowerShell
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+🧪 PRUEBA #3: HACER UN CAMBIO DE PRUEBA
+────────────────────────────────────────
+
+Paso A: Abrir el TXT
+  1. Abre: textos_talentopolis.txt
+  2. Busca: Ctrl+F
+  3. Busca por: "TAGLINE:"
+
+Paso B: Ver el texto original
+  TAGLINE:
+  EL FUTURO DEL TRABAJO ES HOY
+
+Paso C: Cambiar temporalmente
+  Reemplaza "HOY" por "AHORA"
+  
+  Quedaría así:
+  TAGLINE:
+  EL FUTURO DEL TRABAJO ES AHORA
+
+Paso D: Guardar
+  Presiona: Ctrl+S
+
+Paso E: Ejecutar el script
+  1. Abre PowerShell
+  2. Navega a TALENTOPOLIS
+  3. Ejecuta: python sync_textos.py
+
+Paso F: Esperar el resultado
+  Deberías ver:
+  ✅ SINCRONIZACIÓN COMPLETADA EXITOSAMENTE
+
+Paso G: Verificar cambios en HTML
+  1. Abre: index.html con Notepad
+  2. Busca: "EL FUTURO DEL TRABAJO ES AHORA"
+  3. Si está ahí: ✅ ¡FUNCIONA!
+
+Paso H: Restaurar el original
+  1. En textos_talentopolis.txt
+  2. Cambia "AHORA" de nuevo por "HOY"
+  3. Ejecuta: python sync_textos.py
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎯 PRUEBA #4: VALIDAR BACKUP
+──────────────────────────────
+
+El sistema crea backups automáticamente.
+
+Verifica:
+  1. Ejecuta el script una vez: python sync_textos.py
+  2. En la carpeta TALENTOPOLIS debe aparecer: index_backup.html
+  3. Compara tamaño: index.html y index_backup.html deberían ser similares
+  4. ✅ Si existe el backup: ¡EXCELENTE!
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+✅ CHECKLIST DE VALIDACIÓN FINAL
+─────────────────────────────────
+
+☑ Python funciona
+  Comando: python --version
+  ✓ No hay error
+
+☑ Archivos existen
+  Comando: ls
+  ✓ Ve todos los archivos
+
+☑ Script se ejecuta
+  Comando: python sync_textos.py
+  ✓ No hay error
+
+☑ HTML se actualiza
+  Verifica: index.html contiene cambios
+  ✓ Los cambios están
+
+☑ Backup se crea
+  Verifica: index_backup.html existe
+  ✓ El archivo existe
+
+SI TODOS LOS CHECKS ESTÁN ✓
+   🎉 ¡EL SISTEMA ESTÁ LISTO!
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+❌ SOLUCIÓN DE PROBLEMAS DE PRUEBA
+──────────────────────────────────
+
+ERROR en Prueba #2 - "Python no se encontró"
+──────────────────────────────────────────────
+Solución:
+  1. Instala Python: https://www.python.org/downloads/
+  2. Elige "Windows Installer (64-bit)"
+  3. IMPORTANTE: Marca ☑ "Add Python to PATH"
+  4. Completa la instalación
+  5. Reinicia PowerShell completamente
+  6. Intenta de nuevo
+
+ERROR en Prueba #3 - Script no se ejecuta
+─────────────────────────────────────────
+Solución:
+  1. Asegúrate de estar en la carpeta correcta
+     cd C:\Users\Lobitoxic\OneDrive\Documentos\LINEGRAVITY\TALENTOPOLIS
+  2. Verifica que sync_textos.py existe
+     ls sync_textos.py
+  3. Intenta de nuevo: python sync_textos.py
+
+ERROR en Prueba #3 - "Ruta no encontrada"
+──────────────────────────────────────────
+Solución:
+  1. Abre sync_textos.py
+  2. Verifica que WORKSPACE sea la ruta correcta
+  3. Si la ruta contiene espacios, debe estar entre comillas
+  4. Ejemplo:
+     WORKSPACE = r"c:\Users\Lobitoxic\OneDrive\Documentos\LINEGRAVITY\TALENTOPOLIS"
+
+ERROR en Prueba #4 - No se crea backup
+──────────────────────────────────────
+Solución:
+  1. Verifica que el script se ejecutó sin errores
+  2. Si hay errores, consulta el log
+  3. Ejecuta el script nuevamente
+  4. El backup se crea cada sincronización
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+📊 RESULTADO ESPERADO
+──────────────────────
+
+Cuando ejecutas:
+```
+C:\...\TALENTOPOLIS> python sync_textos.py
+```
+
+Deberías ver:
+```
+════════════════════════════════════════════════════════════════════════════
+SINCRONIZADOR TALENTÓPOLIS - TXT to HTML
+════════════════════════════════════════════════════════════════════════════
+📄 Leyendo TXT: c:\Users\...\textos_talentopolis.txt
+🔍 Parsing textos...
+📋 Secciones encontradas:
+  • HERO (Portada Principal)
+  • ABOUT (Quiénes Somos)
+  • SERVICES (Servicios)
+  • WORKFLOW (Proceso de Trabajo)
+  • VIDEOS (Producciones Destacadas)
+  • PROGRAMS (Nuestros Programas)
+  • COMUNICARTE (Formato Destacado)
+  • SPOTIFY (Programas en Spotify)
+  • TEAM (Equipo)
+  • CONTACT / CTA (Contacto y Llamada a Acción)
+  • FOOTER (Pie de Página)
+
+📖 Leyendo HTML: c:\Users\...\index.html
+💾 Creando backup...
+🔄 Actualizando HTML con textos del TXT...
+✅ HTML actualizado exitosamente
+💿 Guardando HTML actualizado...
+
+════════════════════════════════════════════════════════════════════════════
+✅ SINCRONIZACIÓN COMPLETADA EXITOSAMENTE
+════════════════════════════════════════════════════════════════════════════
+```
+
+Si ves ✅ SINCRONIZACIÓN COMPLETADA: ¡LISTO!
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎓 PRÓXIMO PASO DESPUÉS DE LAS PRUEBAS
+─────────────────────────────────────
+
+Una vez que hayas validado que todo funciona:
+
+1. Lee: QUICK_START.txt
+2. Lee: INSTRUCCIONES.txt
+3. ¡Empieza a editar tus textos!
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+¿TODO LISTO? ¡Felicidades! 🎉
+Ahora puedes:
+  ✅ Editar textos en TXT
+  ✅ Sincronizar con un comando
+  ✅ Ver cambios inmediatamente
+  ✅ ¡Trabajar de forma eficiente!
+
+═══════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,108 @@
+<!-- ══════ CONTACT & FOOTER ══════ -->
+<footer class="section" id="contact" style="background: #090c10; padding: 60px 0 20px; border-top: 1px solid rgba(255,255,255,0.05);">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <img src="assets/logos_talentopolis/logo-mic-blanco.png" alt="Talentópolis" class="footer-logo">
+        <p>Productora audiovisual y medio multiplataforma. El futuro del trabajo es hoy.</p>
+        <div class="social-links">
+          <a href="https://www.youtube.com/@talentopolis" target="_blank" rel="noopener noreferrer"><img src="assets/Logos_Botones/youtube.svg" alt="YT"></a>
+          <a href="https://www.instagram.com/talentopolis/" target="_blank" rel="noopener noreferrer"><img src="assets/Logos_Botones/instagram.svg" alt="IG"></a>
+          <a href="https://www.linkedin.com/company/talentópolis-oficial/" target="_blank" rel="noopener noreferrer"><img src="assets/Logos_Botones/linkedin.svg" alt="IN"></a>
+          <a href="https://open.spotify.com/show/4C5OdIj2KqmfY1ij7VkTiG" target="_blank" rel="noopener noreferrer"><img src="assets/Logos_Botones/spotify.svg" alt="SP"></a>
+          <a href="https://www.facebook.com/TalentopolisOficial" target="_blank" rel="noopener noreferrer"><img src="assets/Logos_Botones/facebook.svg" alt="FB"></a>
+        </div>
+      </div>
+      
+      <!-- Contact Column -->
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <ul class="contact-list">
+          <li><img src="assets/Logos_Botones/WhatsApp.svg" alt=""> +569 4047 8605</li>
+          <li><img src="assets/Logos_Botones/Gmail.svg" alt=""> contacto@talentopolis.cl</li>
+          <li><img src="assets/Logos_Botones/Google_Maps.svg" alt=""> Antonio Bellet 444, Of. 203</li>
+        </ul>
+      </div>
+
+      <!-- Resources Column -->
+      <div class="footer-resources">
+        <h4>Dossier Comercial</h4>
+        <button onclick="generatePDF()" class="btn-pdf-footer" style="background: var(--orange); color: white; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Descargar PDF
+        </button>
+        <p style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-top: 15px; line-height: 1.4;">Obtén una versión offline de nuestra presentación comercial.</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 Talentópolis. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════ SCRIPTS ══════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+// Navbar scroll effect
+const nav = document.querySelector('.navbar');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+}
+
+// Photo Gallery
+const track = document.getElementById('galleryTrack');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let galleryIndex = 0;
+if (track && prevBtn && nextBtn) {
+  const slides = track.querySelectorAll('.gallery-slide');
+  const updateGallery = () => track.style.transform = `translateX(-${galleryIndex * 100}%)`;
+  nextBtn.addEventListener('click', () => { galleryIndex = (galleryIndex + 1) % slides.length; updateGallery(); });
+  prevBtn.addEventListener('click', () => { galleryIndex = (galleryIndex - 1 + slides.length) % slides.length; updateGallery(); });
+}
+
+// Video Gallery
+const vTrack = document.getElementById('videoBrochureTrack');
+const vPrevBtn = document.getElementById('prevBrochureVideoBtn');
+const vNextBtn = document.getElementById('nextBrochureVideoBtn');
+let vIndex = 0;
+if (vTrack && vPrevBtn && vNextBtn) {
+  const vSlides = vTrack.querySelectorAll('.gallery-slide');
+  const updateV = () => vTrack.style.transform = `translateX(-${vIndex * 100}%)`;
+  vNextBtn.addEventListener('click', () => { vIndex = (vIndex + 1) % vSlides.length; updateV(); });
+  vPrevBtn.addEventListener('click', () => { vIndex = (vIndex - 1 + vSlides.length) % vSlides.length; updateV(); });
+}
+
+// PDF Generation
+function generatePDF() {
+  const element = document.body;
+  const opt = {
+    margin: [10, 0],
+    filename: 'Talentopolis_Dossier_2026.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true, backgroundColor: '#0d1117' },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+  };
+  const style = document.createElement('style');
+  style.id = 'temp-pdf-style';
+  style.innerHTML = `
+    #galeria-videos-brochure, #galeria-invitados, .gallery-nav, .navbar, .play-overlay, .spotify-badge, footer button, .footer-resources p { display: none !important; }
+    .section { page-break-inside: avoid !important; padding: 30px 0 !important; }
+    .hero { height: auto !important; padding: 40px 0 !important; }
+    body { background-color: #0d1117 !important; }
+  `;
+  document.head.appendChild(style);
+  html2pdf().set(opt).from(element).save().then(() => document.getElementById('temp-pdf-style').remove());
+}
+</script>
+</body>
+</html>

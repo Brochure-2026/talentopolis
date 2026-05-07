@@ -1,0 +1,137 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                             ║
+║                      🚀 QUICK START - 3 PASOS                              ║
+║                                                                             ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PASO 1: EDITAR                                                           │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                           │
+│  1. Abre: textos_talentopolis.txt                                        │
+│  2. Busca el texto que quieres cambiar (Ctrl+F)                          │
+│  3. Edita SOLO el contenido después del ":"                              │
+│  4. Guarda (Ctrl+S)                                                      │
+│                                                                           │
+│  Ejemplo:                                                                │
+│  ──────────                                                              │
+│  TAGLINE:                                                                │
+│  EL FUTURO DEL TRABAJO ES HOY  ← AQUÍ cambias el texto                  │
+│                                                                           │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PASO 2: SINCRONIZAR                                                      │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                           │
+│  1. Abre PowerShell en la carpeta TALENTOPOLIS                           │
+│     (Shift + Click derecho → "Abrir PowerShell aquí")                    │
+│                                                                           │
+│  2. Escribe:                                                             │
+│     python sync_textos.py                                               │
+│                                                                           │
+│  3. Presiona ENTER                                                       │
+│                                                                           │
+│  4. Espera a ver: ✅ SINCRONIZACIÓN COMPLETADA EXITOSAMENTE             │
+│                                                                           │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PASO 3: VER CAMBIOS                                                      │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                           │
+│  1. Abre tu navegador                                                    │
+│  2. Presiona: Ctrl + F5 (recarga completa)                               │
+│  3. ¡Listo! Los cambios están en vivo                                    │
+│                                                                           │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    📚 SECCIONES DEL ARCHIVO TXT                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+1. HERO ........................ Portada / Banner principal
+2. ABOUT ....................... Quiénes Somos + Estadísticas
+3. SERVICES .................... Los 8 Servicios + Deliverables
+4. WORKFLOW .................... Los 5 Pasos del proceso
+5. VIDEOS ...................... Producciones destacadas (6 videos)
+6. PROGRAMS .................... Nuestros 9 Programas
+7. COMUNICARTE ................. Formato Destacado + 3 Invitados
+8. SPOTIFY ..................... Programas en Spotify
+9. TEAM ........................ Equipo + Vacante
+10. CONTACT .................... CTA + Contacto
+11. FOOTER ..................... Pie de página + Redes Sociales
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                        ⚡ BÚSQUEDAS RÁPIDAS                               ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Usa Ctrl+F para encontrar rápidamente:
+
+🔎 Quiero cambiar el tagline
+   Busca: "TAGLINE:"
+
+🔎 Quiero cambiar el título principal
+   Busca: "HEADLINE:"
+
+🔎 Quiero cambiar los servicios
+   Busca: "SERVICIO 1:"
+
+🔎 Quiero cambiar los programas
+   Busca: "PROGRAMA 1:"
+
+🔎 Quiero cambiar el contacto
+   Busca: "TELÉFONO:"
+
+🔎 Quiero cambiar redes sociales
+   Busca: "REDES SOCIALES:"
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                      ❌ NO HAGAS ESTO                                    ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+❌ NO cambies los nombres de etiquetas (TAGLINE → ETIQUETA)
+❌ NO elimines las líneas con "---"
+❌ NO elimines las líneas con "### SECCIÓN"
+❌ NO dejes espacios en blanco entre el ":" y el texto
+❌ NO uses caracteres raros sin probar
+
+Si accidentalmente rompiste algo, restaura desde:
+→ index_backup.html (copia de seguridad automática)
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                         🆘 PROBLEMAS                                     ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+"Python no se encontró"
+→ Instala: https://www.python.org/downloads/
+→ Marca: "Add Python to PATH"
+→ Reinicia PowerShell
+
+"Los cambios no aparecen"
+→ Recarga con Ctrl+F5 (no solo F5)
+→ Cierra completamente el navegador y reabre
+→ Verifica que el script terminó sin errores
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                  📖 DOCUMENTACIÓN COMPLETA                                ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Para una guía más detallada, abre:
+→ INSTRUCCIONES.txt
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                              ¡Listo para usar! 🎉
+                         Edita → Sincroniza → Disfruta
+
+═══════════════════════════════════════════════════════════════════════════════

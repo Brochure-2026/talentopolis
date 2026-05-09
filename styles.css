@@ -34,7 +34,7 @@ body {
   color: var(--gray-800);
   background: var(--white);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
@@ -183,7 +183,7 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
 /* ══════════ HERO ══════════ */
 .hero {
   background: var(--gradient-hero);
-  min-height: 100vh; display:flex; flex-direction: column; justify-content:center; position:relative;
+  height: 100vh; display:flex; flex-direction: column; justify-content:center; position:relative;
   overflow:hidden; scroll-snap-align: start;
   scroll-snap-stop: always;
 }
@@ -192,6 +192,8 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 64px;
+  padding-bottom: 52px;
 }
 
 .hero-logo-xl {
@@ -240,7 +242,7 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px;
 }
 .hero h1 {
-  color: var(--white); font-size: clamp(2.4rem,5vw,3.8rem);
+  color: var(--white); font-size: clamp(1.8rem,3.8vw,3.2rem);
   font-weight: 800; margin-bottom: 15px;
 }
 .hero h1 span { color: var(--orange); }
@@ -1920,6 +1922,7 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   /* ── Tipografía ── */
   .section-title { font-size: clamp(1.3rem, 5.5vw, 1.8rem); }
 }
+
 
 /* ══════════════════════════════════════════════════════════════════
    CONTACT — una sola ventana en desktop (≥ 1025px)

@@ -149,8 +149,8 @@ def update_html(html, data):
         html = re.sub(r'(<section id="about".*?<h2 class="section-title">).*?(</h2>)', rf'\1{title}\2', html, flags=re.DOTALL)
         
         # Párrafos
-        p1 = about["kv"].get("PÁRRAFO 1", "")
-        p2 = about["kv"].get("PÁRRAFO 2", "")
+        p1 = html_sanitizer.escape(about["kv"].get("PÁRRAFO 1", ""))
+        p2 = html_sanitizer.escape(about["kv"].get("PÁRRAFO 2", ""))
         # Reemplazar los dos primeros <p> después del h2 en la sección about
         about_sect_match = re.search(r'<div class="about-text[^>]*>.*?</h2>\s*<p>(.*?)</p>\s*<p>(.*?)</p>', html, flags=re.DOTALL)
         if about_sect_match:
@@ -166,8 +166,8 @@ def update_html(html, data):
                 # Formato esperado: "Nombre: Valor" o "1. Nombre: Valor"
                 parts = m_text.split(':', 1)
                 if len(parts) == 2:
-                    label = parts[0].strip()
-                    val = parts[1].strip()
+                    label = html_sanitizer.escape(parts[0].strip())
+                    val = html_sanitizer.escape(parts[1].strip())
                     new_card = f'<div class="stat-card{" accent" if i%2!=0 else ""}"><div class="number">{val}</div><div class="label">{label}</div></div>'
                     html = html.replace(stat_cards[i], new_card)
 
@@ -204,15 +204,15 @@ def update_html(html, data):
         # Entregables
         deliverables = services['lists'].get('LO QUE RECIBE EL CLIENTE', [])
         if deliverables:
-            d_html = '\n'.join([f'        <div class="deliverable-item">{d}</div>' for d in deliverables])
+            d_html = '\n'.join([f'        <div class="deliverable-item">{html_sanitizer.escape(d)}</div>' for d in deliverables])
             html = re.sub(r'(<div class="deliverables-grid">).*?(</div>)', rf'\1\n{d_html}\n      \2', html, flags=re.DOTALL)
 
     # 4. WORKFLOW
     workflow = data.get('WORKFLOW')
     if workflow:
         log("Actualizando WORKFLOW...")
-        html = re.sub(r'(<section id="workflow".*?<p class="section-label">).*?(</p>)', rf'\1{workflow["kv"].get("LABEL", "")}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="workflow".*?<h2 class="section-title">).*?(</h2>)', rf'\1{workflow["kv"].get("TÍTULO", "")}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="workflow".*?<p class="section-label">).*?(</p>)', rf'\1{html_sanitizer.escape(workflow["kv"].get("LABEL", ""))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="workflow".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(workflow["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
         
         steps = workflow['lists'].get('PASOS', [])
         step_divs = re.findall(r'<div class="workflow-step">.*?</div>', html, flags=re.DOTALL)
@@ -220,8 +220,8 @@ def update_html(html, data):
         for step_text in steps:
             parts = step_text.split(':', 1)
             if len(parts) == 2:
-                s_title = parts[0].strip()
-                s_desc = parts[1].strip()
+                s_title = html_sanitizer.escape(parts[0].strip())
+                s_desc = html_sanitizer.escape(parts[1].strip())
                 # Find which div has this number
                 for div in step_divs:
                     if f'<h4>{s_title}</h4>' in div or f'<h4>{s_title.split(".",1)[-1].strip()}</h4>' in div:
@@ -232,8 +232,8 @@ def update_html(html, data):
     video_gallery = data.get('VIDEO-GALLERY')
     if video_gallery:
         log("Actualizando VIDEO-GALLERY...")
-        html = re.sub(r'(<section id="galeria-videos-brochure".*?<h2 class="section-title">).*?(</h2>)', rf'\1{video_gallery["kv"].get("TÍTULO", "")}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="galeria-videos-brochure".*?<p class="video-gallery-tagline">).*?(</p>)', rf'\1{video_gallery["kv"].get("TAGLINE", "")}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="galeria-videos-brochure".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(video_gallery["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="galeria-videos-brochure".*?<p class="video-gallery-tagline">).*?(</p>)', rf'\1{html_sanitizer.escape(video_gallery["kv"].get("TAGLINE", ""))}\2', html, flags=re.DOTALL)
         
         # Videos (Iframes)
         v_list = video_gallery['lists'].get('VIDEOS', [])
@@ -249,8 +249,8 @@ def update_html(html, data):
     showcase = data.get('SHOWCASE')
     if showcase:
         log("Actualizando SHOWCASE...")
-        html = re.sub(r'(<section id="videos".*?<p class="section-label">).*?(</p>)', rf'\1{showcase["kv"].get("LABEL", "")}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="videos".*?<h2 class="section-title">).*?(</h2>)', rf'\1{showcase["kv"].get("TÍTULO", "")}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="videos".*?<p class="section-label">).*?(</p>)', rf'\1{html_sanitizer.escape(showcase["kv"].get("LABEL", ""))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="videos".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(showcase["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
         
         # Videos grid - solo títulos y subtítulos (URLs son más complejas si cambian)
         v_list = showcase['lists'].get('VIDEOS', [])
@@ -261,7 +261,8 @@ def update_html(html, data):
                 if ' - ' in v_text:
                     v_name, v_prog = v_text.split(' - ', 1)
                     # Limpiar número si existe "1. Nombre"
-                    v_name = re.sub(r'^\d+\.\s*', '', v_name)
+                    v_name = html_sanitizer.escape(re.sub(r'^\d+\.\s*', '', v_name))
+                    v_prog = html_sanitizer.escape(v_prog)
                     new_card = v_cards[i]
                     new_card = re.sub(r'<h3><a[^>]*>.*?</a></h3>', f'<h3><a href="#">{v_name}</a></h3>', new_card)
                     new_card = re.sub(r'<p>.*?</p>', f'<p>{v_prog}</p>', new_card)
@@ -271,7 +272,7 @@ def update_html(html, data):
     programs = data.get('PROGRAMS')
     if programs:
         log("Actualizando PROGRAMS...")
-        html = re.sub(r'(<section id="programs".*?<h2 class="section-title">).*?(</h2>)', rf'\1{programs["kv"].get("TÍTULO", "")}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="programs".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(programs["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
         
         p_list = programs['lists'].get('LISTADO DE PROGRAMAS', [])
         p_cards = re.findall(r'<a[^>]*class="program-card[^>]*>.*?</a>', html, flags=re.DOTALL)
@@ -279,9 +280,8 @@ def update_html(html, data):
             if i < len(p_cards):
                 parts = p_text.split(':', 1)
                 if len(parts) == 2:
-                    p_name = parts[0].strip()
-                    p_name = re.sub(r'^\d+\.\s*', '', p_name)
-                    p_desc = parts[1].strip()
+                    p_name = html_sanitizer.escape(re.sub(r'^\d+\.\s*', '', parts[0].strip()))
+                    p_desc = html_sanitizer.escape(parts[1].strip())
                     new_card = p_cards[i]
                     # Preservar el highlight si existe (T1-5 etc)
                     highlight = ""
@@ -312,11 +312,11 @@ def update_html(html, data):
                 # Formato: "Nombre: Cargo. Descripción."
                 parts = g_text.split(':', 1)
                 if len(parts) == 2:
-                    name = parts[0].strip()
+                    name = html_sanitizer.escape(parts[0].strip())
                     rest = parts[1].strip()
                     desc_parts = rest.split('. ', 1)
-                    cargo = desc_parts[0]
-                    desc = desc_parts[1] if len(desc_parts) > 1 else ""
+                    cargo = html_sanitizer.escape(desc_parts[0])
+                    desc = html_sanitizer.escape(desc_parts[1]) if len(desc_parts) > 1 else ""
                     
                     new_card = g_cards[i]
                     new_card = re.sub(r'<h4>.*?</h4>', f'<h4>{name}</h4>', new_card)
@@ -330,21 +330,21 @@ def update_html(html, data):
     guests_gallery = data.get('GUESTS-GALLERY')
     if guests_gallery:
         log("Actualizando GUESTS-GALLERY...")
-        html = re.sub(r'(<section id="galeria-invitados".*?<h2 class="section-title">).*?(</h2>)', rf'\1{guests_gallery["kv"].get("TÍTULO", "")}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="galeria-invitados".*?<p class="section-tagline">).*?(</p>)', rf'\1{guests_gallery["kv"].get("BAJADA", "")}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="galeria-invitados".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(guests_gallery["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="galeria-invitados".*?<p class="section-tagline">).*?(</p>)', rf'\1{html_sanitizer.escape(guests_gallery["kv"].get("BAJADA", ""))}\2', html, flags=re.DOTALL)
 
     # 7c. SPOTIFY (Página 10)
     spotify = data.get('SPOTIFY')
     if spotify:
         log("Actualizando SPOTIFY...")
-        html = re.sub(r'(<section id="spotify".*?<h2 class="section-title">).*?(</h2>)', rf'\1{spotify["kv"].get("TÍTULO", "")}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="spotify".*?<p class="section-sub[^>]*>).*?(</p>)', rf'\1{spotify["kv"].get("SUBTÍTULO", "")}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="spotify".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(spotify["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="spotify".*?<p class="section-sub[^>]*>).*?(</p>)', rf'\1{html_sanitizer.escape(spotify["kv"].get("SUBTÍTULO", ""))}\2', html, flags=re.DOTALL)
         
         s_list = spotify['lists'].get('PROGRAMAS', [])
         s_cards = re.findall(r'<a[^>]*class="spotify-card[^>]*>.*?</a>', html, flags=re.DOTALL)
         for i, s_name in enumerate(s_list[:4]):
             if i < len(s_cards):
-                clean_name = re.sub(r'^\d+\.\s*', '', s_name).strip()
+                clean_name = html_sanitizer.escape(re.sub(r'^\d+\.\s*', '', s_name).strip())
                 new_card = re.sub(r'alt="[^"]*"', f'alt="{clean_name}"', s_cards[i])
                 html = html.replace(s_cards[i], new_card)
 
@@ -358,9 +358,8 @@ def update_html(html, data):
             if i < len(t_cards):
                 parts = t_text.split(':', 1)
                 if len(parts) == 2:
-                    name = parts[0].strip()
-                    name = re.sub(r'^\d+\.\s*', '', name)
-                    role = parts[1].strip()
+                    name = html_sanitizer.escape(re.sub(r'^\d+\.\s*', '', parts[0].strip()))
+                    role = html_sanitizer.escape(parts[1].strip())
                     new_card = t_cards[i]
                     new_card = re.sub(r'<h3>.*?</h3>', f'<h3>{name}</h3>', new_card)
                     new_card = re.sub(r'<p>.*?</p>', f'<p>{role}</p>', new_card)
@@ -370,20 +369,20 @@ def update_html(html, data):
     contact = data.get('CONTACTO')
     if contact:
         log("Actualizando CONTACTO...")
-        html = re.sub(r'(<div class="cta-area-full[^>]*>\s*<h2>).*?(</h2>)', rf'\1\n        {contact["kv"].get("CTA", "")}\n      \2', html, flags=re.DOTALL)
-        html = re.sub(r'(<div class="cta-area-full[^>]*>.*?<p>).*?(</p>)', rf'\1\n        {contact["kv"].get("SUB-CTA", "")}\n      \2', html, flags=re.DOTALL)
+        html = re.sub(r'(<div class="cta-area-full[^>]*>\s*<h2>).*?(</h2>)', rf'\1\n        {html_sanitizer.escape(contact["kv"].get("CTA", ""))}\n      \2', html, flags=re.DOTALL)
+        html = re.sub(r'(<div class="cta-area-full[^>]*>.*?<p>).*?(</p>)', rf'\1\n        {html_sanitizer.escape(contact["kv"].get("SUB-CTA", ""))}\n      \2', html, flags=re.DOTALL)
         
         # Datos específicos en footer
         c_list = contact['lists'].get('DATOS DE CONTACTO', [])
         for c_item in c_list:
             if 'WhatsApp' in c_item:
-                val = c_item.split(':', 1)[1].strip()
+                val = html_sanitizer.escape(c_item.split(':', 1)[1].strip())
                 html = re.sub(r'(<li[^>]*whatsapp.*?<span>).*?(</span>)', rf'\1{val}\2', html, flags=re.DOTALL)
             if 'Email' in c_item:
-                val = c_item.split(':', 1)[1].strip()
+                val = html_sanitizer.escape(c_item.split(':', 1)[1].strip())
                 html = re.sub(r'(<li[^>]*gmail.*?<span>).*?(</span>)', rf'\1{val}\2', html, flags=re.DOTALL)
             if 'Dirección' in c_item:
-                val = c_item.split(':', 1)[1].strip()
+                val = html_sanitizer.escape(c_item.split(':', 1)[1].strip())
                 # Split for <br>
                 val_html = val.replace(', Providencia', '<br>Providencia')
                 html = re.sub(r'(<li[^>]*maplibre.*?<span>).*?(</span>)', rf'\1{val_html}\2', html, flags=re.DOTALL)

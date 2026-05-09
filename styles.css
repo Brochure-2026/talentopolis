@@ -2007,6 +2007,94 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
 .skip-link:focus { top: 0; }
 
 /* ══════════════════════════════════════════════════════════════════
+   ELEVATED ANIMATIONS — 7 EFFECTS
+   ══════════════════════════════════════════════════════════════════ */
+
+/* 1 — Service card stagger (cascade fade-up, 80ms between cards) */
+.services-grid .service-card:nth-child(1) { transition-delay: 0ms; }
+.services-grid .service-card:nth-child(2) { transition-delay: 80ms; }
+.services-grid .service-card:nth-child(3) { transition-delay: 160ms; }
+.services-grid .service-card:nth-child(4) { transition-delay: 240ms; }
+.services-grid .service-card:nth-child(5) { transition-delay: 320ms; }
+.services-grid .service-card:nth-child(6) { transition-delay: 400ms; }
+.services-grid .service-card:nth-child(7) { transition-delay: 480ms; }
+.services-grid .service-card:nth-child(8) { transition-delay: 560ms; }
+.services-grid .service-card:hover        { transition-delay: 0ms; }
+
+/* 2 — Service icon micro-bounce on hover (spring overshoot) */
+.service-icon {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.service-card:hover .service-icon { transform: scale(1.25); }
+
+/* 3 — Workflow step numbers cascade-pulse (suggests data flow) */
+@keyframes stepPulse {
+  0%          { box-shadow: 0 0 0 0 rgba(0,87,184,0.55); }
+  40%         { box-shadow: 0 0 0 12px rgba(0,87,184,0); }
+  40.01%, 100% { box-shadow: 0 0 0 0 rgba(0,87,184,0); }
+}
+.step-number                               { animation: stepPulse 3s ease-in-out infinite; }
+.workflow-step:nth-child(2) .step-number   { animation-delay: 0.5s; }
+.workflow-step:nth-child(3) .step-number   { animation-delay: 1s; }
+.workflow-step:nth-child(4) .step-number   { animation-delay: 1.5s; }
+.workflow-step:nth-child(5) .step-number   { animation-delay: 2s; }
+.workflow-step:nth-child(6) .step-number   { animation-delay: 2.5s; }
+
+/* 4 — Stat accent card pulsing orange border */
+@keyframes accentGlow {
+  0%, 100% { border-color: var(--gray-200); }
+  50%       { border-color: rgba(255,107,43,0.45); }
+}
+.stat-card.accent { animation: accentGlow 3s ease-in-out infinite; }
+
+/* 5 — Hero logo float ("breathe") */
+@keyframes breathe {
+  0%, 100% { transform: translateY(0px);  filter: drop-shadow(0 15px 35px rgba(0,0,0,0.40)); }
+  50%       { transform: translateY(-8px); filter: drop-shadow(0 22px 44px rgba(0,0,0,0.30)); }
+}
+.hero-logo-xl    { animation: breathe 4s ease-in-out infinite; }
+.hero-logo-large { animation: breathe 4s ease-in-out infinite; }
+
+/* 6 — Nav links sliding orange underline */
+.nav-links a          { position: relative; }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+/* 7 — Deliverable hero cards shimmer on page load */
+@keyframes shimmerSlide {
+  from { transform: translateX(-200%) skewX(-12deg); }
+  to   { transform: translateX(400%)  skewX(-12deg); }
+}
+.deliverable-hero-card { position: relative; overflow: hidden; }
+.deliverable-hero-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent);
+  pointer-events: none;
+  animation: shimmerSlide 0.65s ease-out both;
+}
+.deliverable-hero-card:nth-child(1)::after { animation-delay: 0.40s; }
+.deliverable-hero-card:nth-child(2)::after { animation-delay: 0.55s; }
+.deliverable-hero-card:nth-child(3)::after { animation-delay: 0.70s; }
+.deliverable-hero-card:nth-child(4)::after { animation-delay: 0.85s; }
+.deliverable-hero-card:nth-child(5)::after { animation-delay: 1.00s; }
+.deliverable-hero-card:nth-child(6)::after { animation-delay: 1.15s; }
+
+/* ══════════════════════════════════════════════════════════════════
    PREFERS-REDUCED-MOTION
    ══════════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {

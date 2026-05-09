@@ -27,7 +27,7 @@
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+html { scroll-behavior: smooth; scroll-snap-type: y mandatory; overflow-x: clip; }
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -438,6 +438,16 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
 .c-dot:nth-child(2) { animation: cDot2 8s infinite alternate ease-in-out; }
 .comunicarte-visual img { width:100%; border-radius:var(--radius); transition:transform 0.5s ease; }
 .maca-main-img { transform: scale(1.1); }
+
+.maca-conduce-label {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+}
 
 .maca-social-btns {
   display: flex;
@@ -985,6 +995,27 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   .services-grid { grid-template-columns: 1fr; }
   .guest-cards { flex-direction:column; align-items:center; }
   .guest-card { width: 100%; max-width: 320px; }
+
+  /* ComunicArte — invitados estáticos en columna (sin carrusel) */
+  .guest-carousel-container { overflow: visible; }
+  .guest-carousel {
+    flex-direction: column;
+    align-items: center;
+    animation: none;
+    transform: none !important;
+    gap: 12px;
+  }
+  .guest-card {
+    flex: 0 0 auto;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding: 16px 12px;
+    gap: 10px;
+  }
+  .guest-card img { width: 160px; max-width: 160px; margin-bottom: 6px; }
+  .guest-info { text-align: center; }
+  .c-dots { display: none; }
   .videos-grid { grid-template-columns:1fr; }
   .hero-logo-wrapper { flex-direction: column; gap: 8px; }
   .hero-text { font-size: 1.8rem; }
@@ -1691,6 +1722,10 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
    Scroll-snap desactivado. Secciones auto-height.
    ══════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
+  .container { padding: 0 48px; }
+  .section .container, .hero .container { padding: 48px 48px; }
+  #programs .container, #videos .container, #team .container { padding: 48px 48px; }
+
   #programs .section-sub,
   #spotify  .section-sub { white-space: normal; }
 
@@ -1782,7 +1817,7 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   .program-card p  { grid-column: 1; grid-row: 3; font-size: 0.72rem; }
   .programs-grid .program-card:last-child {
     grid-column: 1 / -1;
-    max-width: calc(50% - 5px);
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -1834,9 +1869,9 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
    RESPONSIVE — MÓVIL PEQUEÑO  (≤ 480px)
    ══════════════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
-  .container { padding: 0 14px; }
-  .section .container, .hero .container { padding: 48px 14px; }
-  #programs .container, #videos .container, #team .container { padding: 48px 14px; }
+  .container { padding: 0 28px; }
+  .section .container, .hero .container { padding: 48px 28px; }
+  #programs .container, #videos .container, #team .container { padding: 48px 28px; }
 
   /* ── Una sola columna ── */
   .services-grid          { grid-template-columns: 1fr; }

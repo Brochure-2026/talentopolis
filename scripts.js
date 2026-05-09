@@ -173,9 +173,7 @@ document.querySelectorAll('.stat-card .number').forEach(el => {
 /* ----------------------------------------------------------
    7. VANTA.NET — Fondo animado Hero
    ---------------------------------------------------------- */
-const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
-if (!isMobile && typeof VANTA !== 'undefined') {
+if (typeof VANTA !== 'undefined') {
   VANTA.NET({
     el: '.hero',
     mouseControls: true,

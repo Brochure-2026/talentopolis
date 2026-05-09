@@ -1,4 +1,4 @@
-﻿# CONTENIDO COMERCIAL - TALENTOPOLIS ( Dossier B2B )
+# CONTENIDO COMERCIAL - TALENTOPOLIS ( Dossier B2B )
 # Última Actualización: 2026-05-08 (rev. 2)
 # Sincronizado con index.html — 12 páginas en orden
 # NOTA: Los labels naranjas fueron fusionados con los títulos grandes.
@@ -9,22 +9,22 @@
 ================================================================================
 TAGLINE: EL FUTURO DEL TRABAJO ES HOY
 TÍTULO: Convertimos ideas en contenido audiovisual de alto impacto para expertos y marcas
-SUBTÍTULO: Somos una productora audiovisual y medio multiplataforma que diseña, produce y distribuye podcasts, video podcasts, cápsulas y contenidos para marcas, líderes y organizaciones que buscan posicionar su conocimiento
+SUBTÍTULO: Somos una productora audiovisual y medio de comunicación multiplataforma que diseña, produce y distribuye PodCast, Video PodCast, cápsulas y contenidos para marcas, líderes y organizaciones que buscan posicionar su conocimiento
 
 ================================================================================
 ### PÁGINA 2: QUIÉNES SOMOS (About)
 ================================================================================
 TÍTULO: El punto de encuentro entre la [mirada editorial] y la capacidad técnica
 PÁRRAFO 1: Ayudamos a empresas, instituciones, líderes y expertos a transformar su conocimiento en contenidos profesionales, visibles y reutilizables en múltiples canales
-PÁRRAFO 2: Como medio multiplataforma y productora audiovisual, no solo grabamos: conceptualizamos, ordenamos editorialmente, producimos, editamos y distribuimos. Combinamos una mirada estratégica con la agilidad técnica necesaria para el ecosistema digital actual
+PÁRRAFO 2: Como medio de comunicación multiplataforma y productora audiovisual, no solo grabamos: conceptualizamos, ordenamos editorialmente, producimos, editamos y distribuimos. Combinamos una mirada estratégica con la agilidad técnica necesaria para el ecosistema digital actual
 
 MÉTRICAS:
-1. +7.5K — Subscriptores
+1. +14K — Seguidores
 2. +10 — Programas/PodCast
 3. +1.3M — Views
-4. +7.2K — Followers otras RR.SS.
-5. +15.2K — Likes
-6. +35.3K — Horas de visualización
+4. +7000 — Followers RR.SS.
+5. +15K — Likes
+6. +35K — Horas de visualización
 
 REDES SOCIALES: YouTube / Instagram / LinkedIn / Spotify / Facebook
 
@@ -35,9 +35,9 @@ TÍTULO: Todo lo que necesitas para comunicar con [impacto]
 SUBTÍTULO: Desde la conceptualización hasta la distribución final, somos tu partner integral de contenido audiovisual
 
 LISTADO (2 filas x 4 columnas):
-1. Tu propio podcast: Diseño editorial, grabación, edición, publicación y cápsulas para redes, con una producción integral de principio a fin
+1. Tu propio PodCast: Diseño editorial, grabación, edición, publicación y cápsulas para redes, con una producción integral de principio a fin
 2. Producción audiovisual: Videos corporativos, entrevistas, cápsulas, reels, spots y piezas audiovisuales listas para publicar
-3. Estudio de grabación: Espacio profesional para grabar podcasts, entrevistas y video podcasts. Incluye producción de Cursos E-Learning (Valor x hora)
+3. Estudio de grabación: Espacio profesional para grabar PodCast, entrevistas y Video PodCast. Incluye producción de Cursos E-Learning (Valor x hora)
 4. Cobertura de eventos: Registro audiovisual, entrevistas, cápsulas resumen, piezas para redes y contenido post evento
 5. Media Partner: Alianzas estratégicas para cobertura integral y Producción de Cursos E-Learning con alcance multiplataforma
 6. Auspicios y patrocinios: Integración de marca en programas, cápsulas o temporadas con presencia editorial y distribución digital
@@ -108,7 +108,7 @@ SUBTÍTULO: Cada formato está diseñado para conectar con audiencias específic
 
 LISTADO (9 programas):
 1. Organizaciones del Mañana T1-5: Exploramos tendencias que están redefiniendo la forma en que trabajamos y nos relacionamos hoy para el futuro
-2. Del Aula a la Cancha T1-2: El puente entre la formacion academia y el mundo laboral real. Co-produccion con Universidad Santo Tomás
+2. Del Aula a la Cancha T1-2: El puente entre la formación académica y el mundo laboral real. Coproducción con Universidad Santo Tomás
 3. Mujeres sin Pausa: Conversaciones con mujeres líderes que están transformando sus industrias y entornos
 4. CoffeeBreak con Talento: Conversaciones relajadas y auténticas con talentos diversos en un formato cercano y dinámico
 5. Mujer Hoy Sin Límites TT1-2: Un espacio para potenciar el liderazgo femenino y la equidad en el mundo corporativo
@@ -129,11 +129,11 @@ INVITADOS:
    Descripción: Referente del periodismo de opinión y análisis editorial en Chile.
 
 2. Francisco Melo
-   Cargo: Actor y Conductor - cine, teatro y tv
+   Cargo: Actor y Conductor - cine, teatro y TV
    Descripción: Reconocido intérprete y narrador de grandes historias audiovisuales.
 
 3. Dra. Paula Daza
-   Cargo: Médico Cirujano y Ex Subsecretaria de salud pública
+   Cargo: Médica Cirujana y Exsubsecretaria de Salud Pública
    Descripción: Líder en gestión pública de salud con gran cercanía ciudadana.
 
 ================================================================================
@@ -164,7 +164,7 @@ INTEGRANTES (foto + nombre son hipervínculo a LinkedIn):
 1. Andrés Cardemil — Dirección Ejecutiva / Conducción — linkedin.com/in/andres-cardemil-oliva/
 2. Claudina Villanueva — Producción Ejecutiva Comercial — linkedin.com/in/claudinavillanueva/
 3. Lucas Núñez — Community Manager — linkedin.com/in/lucastalentópolis
-4. Freddy Alexis — Dirección Periodista — linkedin.com/in/freddy-alexis-166873118/
+4. Freddy Alexis — Dirección Periodística — linkedin.com/in/freddy-alexis-166873118/
 
 BANNER PARTNERS (debajo de los integrantes):
 "+ Una amplia, variada y robusta red de Partners y aliados del mundo audiovisual"
@@ -174,7 +174,7 @@ Logos derecha: CISOs / FF / ComunicArte / Conocimiento Encapsulado
 ================================================================================
 ### PÁGINA 12: CONTACTO
 ================================================================================
-CTA: Conversemos sobre tu próximo podcast o contenido audiovisual
+CTA: Conversemos sobre tu próximo PodCast o contenido audiovisual
 SUB-CTA: Te ayudamos a transformar tu conocimiento, marca o experiencia en un formato profesional, visible y distribuible.
 
 BOTONES: Agendar Reunión (wa.me/56940478605) / Enviar Email (contacto@talentopolis.cl)
@@ -185,7 +185,7 @@ FOOTER — DATOS DE CONTACTO:
 - Dirección: Antonio Bellet 444, Of. 203, Providencia, Santiago, Chile (https://www.google.com/maps/place/Antonio+Bellet+444,+oficina+203,+7500032+Providencia,+Regi%C3%B3n+Metropolitana/@-33.4243348,-70.6224296,17z/data=!3m1!4b1!4m6!3m5!1s0x9662cf618c1b0199:0x242247d7cae8061e!8m2!3d-33.4243393!4d-70.6198547!16s%2Fg%2F11yjg9v2xh?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D)
 
 FOOTER — MARCA:
-Productora audiovisual y medio multiplataforma. El futuro del trabajo es hoy.
+Productora audiovisual y medio de comunicación multiplataforma. El futuro del trabajo es hoy.
 Descargar Dossier PDF → assets/Brochure_Talentopolis_2026.pdf
 
 COPYRIGHT: © 2026 TALENTOPOLIS SpA. Todos los derechos reservados.

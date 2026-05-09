@@ -8,3 +8,18 @@ assets/Fotos_para_el_brochure_BACKUP/
 !assets/recursos_comunicArte/Fondo Comunicarte Video Macarena.mp4
 .DS_Store
 Thumbs.db
+
+# Node
+node_modules/
+package-lock.json
+
+# Backups and temporary files
+*_backup.html
+*_fix.html
+test-pp*.js
+
+# Agent files
+.claude/
+memory/
+brain/
+scratch/

@@ -1,41 +1,40 @@
-# CONTENIDO COMERCIAL - TALENTOPOLIS ( Dossier B2B )
-# Última Actualización: 2026-05-06
-# Sincronizado con index.html (Layout 2x3 Workflow, 2x4 Services)
+﻿# CONTENIDO COMERCIAL - TALENTOPOLIS ( Dossier B2B )
+# Última Actualización: 2026-05-08 (rev. 2)
+# Sincronizado con index.html — 12 páginas en orden
+# NOTA: Los labels naranjas fueron fusionados con los títulos grandes.
+#       Ya no existen como elementos separados en el HTML.
 
 ================================================================================
-
-### SECCIÓN 1: HERO
----
+### PÁGINA 1: HERO
+================================================================================
 TAGLINE: EL FUTURO DEL TRABAJO ES HOY
 TÍTULO: Convertimos ideas en contenido audiovisual de alto impacto para expertos y marcas
 SUBTÍTULO: Somos una productora audiovisual y medio multiplataforma que diseña, produce y distribuye podcasts, video podcasts, cápsulas y contenidos para marcas, líderes y organizaciones que buscan posicionar su conocimiento
 
 ================================================================================
-
-### SECCIÓN 2: ABOUT (Quiénes Somos)
----
-LABEL: Quiénes Somos
-TÍTULO: El punto de encuentro entre la mirada editorial y la capacidad técnica
+### PÁGINA 2: QUIÉNES SOMOS (About)
+================================================================================
+TÍTULO: El punto de encuentro entre la [mirada editorial] y la capacidad técnica
 PÁRRAFO 1: Ayudamos a empresas, instituciones, líderes y expertos a transformar su conocimiento en contenidos profesionales, visibles y reutilizables en múltiples canales
 PÁRRAFO 2: Como medio multiplataforma y productora audiovisual, no solo grabamos: conceptualizamos, ordenamos editorialmente, producimos, editamos y distribuimos. Combinamos una mirada estratégica con la agilidad técnica necesaria para el ecosistema digital actual
 
-MÉTRICAS (Validar para envío):
-1. Seguidores: +14K
-2. Programas/PodCast: +10
-3. Views: +1.3M
-4. Follower RR.SS.: +7000
-5. Likes: +15K
-6. Hrs de visualización: +35K
+MÉTRICAS:
+1. +7.5K — Subscriptores
+2. +10 — Programas/PodCast
+3. +1.3M — Views
+4. +7.2K — Followers otras RR.SS.
+5. +15.2K — Likes
+6. +35.3K — Horas de visualización
+
+REDES SOCIALES: YouTube / Instagram / LinkedIn / Spotify / Facebook
 
 ================================================================================
-
-### SECCIÓN 3: SERVICES (Servicios)
----
-LABEL: Servicios
-TÍTULO: Todo lo que necesitas para comunicar con impacto
+### PÁGINA 3: SERVICIOS
+================================================================================
+TÍTULO: Todo lo que necesitas para comunicar con [impacto]
 SUBTÍTULO: Desde la conceptualización hasta la distribución final, somos tu partner integral de contenido audiovisual
 
-LISTADO (Layout 2 filas x 4 columnas):
+LISTADO (2 filas x 4 columnas):
 1. Tu propio podcast: Diseño editorial, grabación, edición, publicación y cápsulas para redes, con una producción integral de principio a fin
 2. Producción audiovisual: Videos corporativos, entrevistas, cápsulas, reels, spots y piezas audiovisuales listas para publicar
 3. Estudio de grabación: Espacio profesional para grabar podcasts, entrevistas y video podcasts. Incluye producción de Cursos E-Learning (Valor x hora)
@@ -54,14 +53,12 @@ LO QUE RECIBE EL CLIENTE:
 - ✅ Publicación y distribución
 
 ================================================================================
-
-### SECCIÓN 4: WORKFLOW (Proceso)
----
-LABEL: Proceso
-TÍTULO: ¿Cómo trabajamos?
+### PÁGINA 4: PROCESO (Workflow)
+================================================================================
+TÍTULO: ¿Cómo [trabajamos]?
 SUBTÍTULO: Un proceso claro y profesional de principio a fin
 
-PASOS (Layout 2x3 - Flujo Cíclico):
+PASOS (Layout 2x3 - Flujo Cíclico, orden visual: 1,2,3 / 6,5,4):
 1. Diagnóstico y objetivo: Definimos audiencia, propósito y mensaje central del contenido
 2. Diseño editorial: Construimos pauta, formato y línea narrativa estratégica
 3. Producción: Grabamos con estándar profesional y dirección técnica
@@ -70,91 +67,125 @@ PASOS (Layout 2x3 - Flujo Cíclico):
 6. Control calidad: Evaluamos y mejoramos continuamente los contenidos
 
 ================================================================================
+### PÁGINA 5: GALERÍA DE VIDEOS (Un vistazo de lo que producimos)
+================================================================================
+TÍTULO: Un vistazo de lo que [producimos]
+TAGLINE: Un poco más cerca de todo lo que involucra ser y hacer en Talentópolis, donde más que una productora somos una familia.
 
-### SECCIÓN 5: SHOWCASE (Producciones Destacadas)
----
-LABEL: Showcase
-TÍTULO: Producciones destacadas
+VIDEOS (Carrusel):
+1. https://www.youtube.com/embed/GplivO0oSqc
+2. https://www.youtube.com/embed/2O1S-ZmDUb0
+3. https://www.youtube.com/embed/S8xQ-qto3PA
+4. https://www.youtube.com/embed/PlVFLJ3IiMU
+5. https://www.youtube.com/embed/dhH71Ic-KAw
+6. https://www.youtube.com/embed/EDkDj66PbF0
+
+================================================================================
+### PÁGINA 6: SHOWCASE (Producciones Destacadas)
+================================================================================
+TÍTULO: Producciones [destacadas]
 SUBTÍTULO: Ejemplos de nuestra calidad de conversación, producción y formato multiplataforma
 
-VIDEOS:
-1. Profesor Maza - Organizaciones del Mañana
+VIDEOS (6 cards):
+1. Profesor Maza — Organizaciones del Mañana
    URL: https://www.youtube.com/watch?v=C3cv7OTFJ5w
-2. Javiera Quiroga - Organizaciones del Mañana
+2. Javiera Quiroga — Organizaciones del Mañana
    URL: https://www.youtube.com/watch?v=hZAw3KznyIU
-3. Francisco Ackermann - Organizaciones del Mañana
+3. Francisco Ackermann — Organizaciones del Mañana
    URL: https://www.youtube.com/watch?v=uL6BFyoD030
-4. Lo mejor de Mujer Sin Pausa - Mujer Sin Pausa
+4. Lo mejor de Mujer Sin Pausa — Mujer Sin Pausa
    URL: https://www.youtube.com/watch?v=RaZRj2XN_qQ&list=PLRS8xZ-8eLGWF8sMDm_bvUyyYoxnnxQGE&index=1
-5. Andrés Muñoz - Ciso's Club
-   URL: https://www.youtube.com/watch?v=hXjtDBgIFcI
-6. Ricardo Mewes - Organizaciones del Mañana
+5. Ramon Heredia — Ciso's Club
+   URL: https://youtu.be/q_4D_oIbxT0
+6. Ricardo Mewes — Organizaciones del Mañana
    URL: https://www.youtube.com/watch?v=0DeS4xmLVH0
 
 ================================================================================
-
-### SECCIÓN 6: PROGRAMS (Nuestros Programas)
----
-LABEL: Programas
-TÍTULO: Nuestros programas y formatos
+### PÁGINA 7: PROGRAMAS
+================================================================================
+TÍTULO: Nuestros programas y [formatos]
 SUBTÍTULO: Cada formato está diseñado para conectar con audiencias específicas a través de narrativas sólidas y producción de alta calidad
 
-LISTADO DE PROGRAMAS:
-1. Organizaciones del Mañana: Exploramos tendencias que están redefiniendo la forma en que trabajamos y nos relacionamos hoy para el futuro
-2. Del Aula a la Cancha: El puente entre la formacion academia y el mundo laboral real Co-producion con Universidad Santo Tomás
+LISTADO (9 programas):
+1. Organizaciones del Mañana T1-5: Exploramos tendencias que están redefiniendo la forma en que trabajamos y nos relacionamos hoy para el futuro
+2. Del Aula a la Cancha T1-2: El puente entre la formacion academia y el mundo laboral real. Co-produccion con Universidad Santo Tomás
 3. Mujeres sin Pausa: Conversaciones con mujeres líderes que están transformando sus industrias y entornos
 4. CoffeeBreak con Talento: Conversaciones relajadas y auténticas con talentos diversos en un formato cercano y dinámico
-5. Mujer Hoy: Sin Límites: Un espacio para potenciar el liderazgo femenino y la equidad en el mundo corporativo
+5. Mujer Hoy Sin Límites TT1-2: Un espacio para potenciar el liderazgo femenino y la equidad en el mundo corporativo
 6. Conocimiento Encapsulado: Píldoras de aprendizaje y contenido experto en formatos breves y de alto impacto
 7. Kolumna Laboral: Análisis y opinión sobre las tendencias del mercado laboral chileno y latinoamericano
 8. CISO's Club: Espacio exclusivo para líderes de ciberseguridad, analizando riesgos y tendencias globales
 9. Finanzas del Futuro: Análisis y proyecciones sobre el mundo económico y nuevas tendencias financieras en activos digitales
 
 ================================================================================
-
-### SECCIÓN 7: COMUNICARTE (Próximo Lanzamiento)
----
-TÍTULO: ComunicArte - Próximo Lanzamiento
+### PÁGINA 8: COMUNICARTE
+================================================================================
+TÍTULO: ComunicArte — [Próximo Lanzamiento]
 DESCRIPCIÓN: Programa conducido por Macarena Saavedra, periodista especializada en comunicación estratégica y liderazgo. Un espacio donde la conversación fluye entre la cultura, el arte y el pensamiento ejecutivo.
 
-INVITADOS DESTACADOS:
-- Mónica Rincón: Periodista y conductora CNN Chile. Referente del periodismo de opinión.
-- Francisco Melo: Actor y Conductor de cine, teatro y tv. Gran narrador de historias.
-- Dra. Paula Daza: Médico Cirujano y Ex Subsecretaria de salud publica.
+INVITADOS:
+1. Mónica Rincón
+   Cargo: Periodista y conductora CNN Chile
+   Descripción: Referente del periodismo de opinión y análisis editorial en Chile.
+
+2. Francisco Melo
+   Cargo: Actor y Conductor - cine, teatro y tv
+   Descripción: Reconocido intérprete y narrador de grandes historias audiovisuales.
+
+3. Dra. Paula Daza
+   Cargo: Médico Cirujano y Ex Subsecretaria de salud pública
+   Descripción: Líder en gestión pública de salud con gran cercanía ciudadana.
 
 ================================================================================
-
-### SECCIÓN 8: GALERÍA DE INVITADOS
----
-TÍTULO: Nuestros invitados más destacados
-BAJADA: Una pequeña mirada de lo que son nuestros invitados que hemos tenido presentes en los distintos programas
-RECURSOS: Imágenes de la carpeta "Fotos_para_el_brochure"
+### PÁGINA 9: GALERÍA DE INVITADOS
+================================================================================
+TÍTULO: Algunos de nuestros invitados
+BAJADA: Una pequeña mirada a quienes han sido parte de nuestros distintos programas
+RECURSOS: Carpeta assets/Fotos_para_el_brochure/
 
 ================================================================================
+### PÁGINA 10: SPOTIFY
+================================================================================
+TÍTULO: Programas [Spotify]
+SUBTÍTULO: Encuentra todos nuestros contenidos en formato audio para escucharlos donde quieras
 
-### SECCIÓN 9: EQUIPO
----
-INTEGRANTES:
-1. Andrés Cardemil: Dirección Ejecutiva / Conducción
-2. Claudina Villanueva: Producción Ejecutiva Comercial
-3. Lucas Núñez: Community Manager
-4. Freddy Alexis: Periodista
+PROGRAMAS (4 cards):
+1. Organizaciones del Mañana
+2. Del Aula a la Cancha
+3. CoffeeBreak
+4. Mujer sin Límites
 
 ================================================================================
+### PÁGINA 11: EQUIPO
+================================================================================
+TÍTULO: Las personas detrás de [Talentópolis]
 
-### SECCIÓN 10: CONTACTO Y REDES
----
+INTEGRANTES (foto + nombre son hipervínculo a LinkedIn):
+1. Andrés Cardemil — Dirección Ejecutiva / Conducción — linkedin.com/in/andres-cardemil-oliva/
+2. Claudina Villanueva — Producción Ejecutiva Comercial — linkedin.com/in/claudinavillanueva/
+3. Lucas Núñez — Community Manager — linkedin.com/in/lucastalentópolis
+4. Freddy Alexis — Dirección Periodista — linkedin.com/in/freddy-alexis-166873118/
+
+BANNER PARTNERS (debajo de los integrantes):
+"+ Una amplia, variada y robusta red de Partners y aliados del mundo audiovisual"
+Logos izquierda: ODM / Del Aula a la Cancha / CoffeeBreak / Mujer Sin Pausa
+Logos derecha: CISOs / FF / ComunicArte / Conocimiento Encapsulado
+
+================================================================================
+### PÁGINA 12: CONTACTO
+================================================================================
 CTA: Conversemos sobre tu próximo podcast o contenido audiovisual
-SUB-CTA: Te ayudamos a transformar tu conocimiento, marca o experiencia en un formato profesional, visible y distribuible
+SUB-CTA: Te ayudamos a transformar tu conocimiento, marca o experiencia en un formato profesional, visible y distribuible.
 
-DATOS DE CONTACTO:
-- WhatsApp: +569 4047 8605
-- Email: contacto@talentopolis.cl
-- Dirección: Antonio Bellet 444, Of. 203, Providencia, Santiago, Chile
+BOTONES: Agendar Reunión (wa.me/56940478605) / Enviar Email (contacto@talentopolis.cl)
 
-REDES SOCIALES (Orden en Footer):
-1. YouTube
-2. Instagram
-3. LinkedIn
-4. Spotify
-5. Facebook
+FOOTER — DATOS DE CONTACTO:
+- WhatsApp: +569 4047 8605 (wa.me/56940478605)
+- Email: contacto@talentopolis.cl (contacto@talentopolis.cl)
+- Dirección: Antonio Bellet 444, Of. 203, Providencia, Santiago, Chile (https://www.google.com/maps/place/Antonio+Bellet+444,+oficina+203,+7500032+Providencia,+Regi%C3%B3n+Metropolitana/@-33.4243348,-70.6224296,17z/data=!3m1!4b1!4m6!3m5!1s0x9662cf618c1b0199:0x242247d7cae8061e!8m2!3d-33.4243393!4d-70.6198547!16s%2Fg%2F11yjg9v2xh?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D)
+
+FOOTER — MARCA:
+Productora audiovisual y medio multiplataforma. El futuro del trabajo es hoy.
+Descargar Dossier PDF → assets/Brochure_Talentopolis_2026.pdf
+
+COPYRIGHT: © 2026 TALENTOPOLIS SpA. Todos los derechos reservados.

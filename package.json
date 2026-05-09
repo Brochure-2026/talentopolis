@@ -1,0 +1,25 @@
+{
+  "name": "talentopolis",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Line-21-cl/talentopolis-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Line-21-cl/talentopolis-web/issues"
+  },
+  "homepage": "https://github.com/Line-21-cl/talentopolis-web#readme",
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^24.43.0"
+  }
+}

@@ -8,6 +8,7 @@ Actualiza TODO el contenido del index.html basándose en textos_talentopolis.txt
 import re
 import os
 import sys
+import html as html_sanitizer
 
 # Configuración de rutas
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -121,17 +122,28 @@ def update_html(html, data):
     hero = data.get('HERO')
     if hero:
         log("Actualizando HERO...")
-        html = re.sub(r'(<p class="hero-tagline[^>]*>).*?(</p>)', rf'\1{hero["kv"].get("TAGLINE", "")}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<h1 class="[^"]*hero-heading-main[^>]*>).*?(</h1>)', rf'\1{hero["kv"].get("TÍTULO", "")}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<p class="hero-sub[^>]*>).*?(</p>)', rf'\1{hero["kv"].get("SUBTÍTULO", "")}\2', html, flags=re.DOTALL)
+        tagline = html_sanitizer.escape(hero["kv"].get("TAGLINE", ""))
+        titulo  = html_sanitizer.escape(hero["kv"].get("TÍTULO", ""))
+        sub     = html_sanitizer.escape(hero["kv"].get("SUBTÍTULO", ""))
+        
+        html = re.sub(r'(<p class="hero-tagline[^>]*>).*?(</p>)', rf'\1{tagline}\2', html, flags=re.DOTALL)
+        # El título principal tiene un span que queremos preservar. 
+        # Si el texto del TXT coincide con el patrón esperado, lo reinsertamos.
+        if "para expertos" in titulo:
+             titulo = titulo.replace("para expertos", '<span class="section-highlight">para expertos</span>')
+             
+        html = re.sub(r'(<h1 class="[^"]*hero-heading-main[^>]*>).*?(</h1>)', rf'\1{titulo}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<p class="hero-sub[^>]*>).*?(</p>)', rf'\1{sub}\2', html, flags=re.DOTALL)
 
     # 2. ABOUT
     about = data.get('ABOUT')
     if about:
         log("Actualizando ABOUT...")
-        html = re.sub(r'(<p class="[^"]*about-section-label[^>]*>).*?(</p>)', rf'\1{about["kv"].get("LABEL", "")}\2', html, flags=re.DOTALL)
+        label = html_sanitizer.escape(about["kv"].get("LABEL", ""))
+        html = re.sub(r'(<p class="[^"]*about-section-label[^>]*>).*?(</p>)', rf'\1{label}\2', html, flags=re.DOTALL)
+        
         # Título con span preservado
-        title = about["kv"].get("TÍTULO", "")
+        title = html_sanitizer.escape(about["kv"].get("TÍTULO", ""))
         if "mirada editorial" in title:
             title = title.replace("mirada editorial", '<span class="section-highlight">mirada editorial</span>')
         html = re.sub(r'(<section id="about".*?<h2 class="section-title">).*?(</h2>)', rf'\1{title}\2', html, flags=re.DOTALL)
@@ -163,9 +175,16 @@ def update_html(html, data):
     services = data.get('SERVICES')
     if services:
         log("Actualizando SERVICES...")
-        html = re.sub(r'(<section id="services".*?<p class="section-label">).*?(</p>)', rf'\1{services["kv"].get("LABEL", "")}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="services".*?<h2 class="section-title">).*?(</h2>)', rf'\1{services["kv"].get("TÍTULO", "")}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="services".*?<p class="section-sub[^>]*>).*?(</p>)', rf'\1{services["kv"].get("SUBTÍTULO", "")}\2', html, flags=re.DOTALL)
+        label = html_sanitizer.escape(services["kv"].get("LABEL", ""))
+        titulo = html_sanitizer.escape(services["kv"].get("TÍTULO", ""))
+        sub = html_sanitizer.escape(services["kv"].get("SUBTÍTULO", ""))
+        
+        if "impacto" in titulo:
+            titulo = titulo.replace("impacto", '<span class="section-highlight">impacto</span>')
+
+        html = re.sub(r'(<section id="services".*?<p class="section-label">).*?(</p>)', rf'\1{label}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="services".*?<h2 class="section-title">).*?(</h2>)', rf'\1{titulo}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="services".*?<p class="section-sub[^>]*>).*?(</p>)', rf'\1{sub}\2', html, flags=re.DOTALL)
         
         # Grid de servicios
         items = services['lists'].get('LISTADO', [])
@@ -174,8 +193,8 @@ def update_html(html, data):
             if i < len(cards):
                 parts = item.split(':', 1)
                 if len(parts) == 2:
-                    s_title = parts[0].strip()
-                    s_desc = parts[1].strip()
+                    s_title = html_sanitizer.escape(parts[0].strip())
+                    s_desc = html_sanitizer.escape(parts[1].strip())
                     # Preservar el icono (emoji)
                     icon_match = re.search(r'<div class="service-icon">(.*?)</div>', cards[i])
                     icon = icon_match.group(1) if icon_match else "🎙️"
@@ -277,11 +296,13 @@ def update_html(html, data):
     comunicarte = data.get('COMUNICARTE')
     if comunicarte:
         log("Actualizando COMUNICARTE...")
-        title = comunicarte["kv"].get("TÍTULO", "")
+        title = html_sanitizer.escape(comunicarte["kv"].get("TÍTULO", ""))
+        desc = html_sanitizer.escape(comunicarte["kv"].get("DESCRIPCIÓN", ""))
+        
         if "Próximo Lanzamiento" in title:
             title = title.replace("Próximo Lanzamiento", '<span class="section-highlight">Próximo Lanzamiento</span>')
         html = re.sub(r'(<section id="comunicarte".*?<h2>).*?(</h2>)', rf'\1{title}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="comunicarte".*?<p class="section-sub">).*?(</p>)', rf'\1{comunicarte["kv"].get("DESCRIPCIÓN", "")}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="comunicarte".*?<p class="section-sub">).*?(</p>)', rf'\1{desc}\2', html, flags=re.DOTALL)
         
         # Invitados
         guests = comunicarte['lists'].get('INVITADOS DESTACADOS', [])

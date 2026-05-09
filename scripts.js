@@ -216,7 +216,7 @@ function downloadDossier(e) {
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
     })
     .catch(() => {
       window.open(url, '_blank');

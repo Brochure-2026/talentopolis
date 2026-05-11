@@ -23,3 +23,12 @@ test-pp*.js
 memory/
 brain/
 scratch/
+
+# Analytics and Secrets
+analytics_tools/credentials.json
+analytics_tools/client_secrets.json
+analytics_tools/token.json
+analytics_tools/.env
+credentials.json
+*.json_key
+.env

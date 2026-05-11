@@ -88,15 +88,37 @@ let vIdx = 0;
 
 if (vTrack && vPrev && vNext) {
   const vSlides = vTrack.querySelectorAll('.gallery-slide-full');
-
+  
   const updateV = () => {
     vTrack.style.transform = `translateX(-${vIdx * 100}%)`;
-    vDots.forEach((d, i) => d.classList.toggle('active', i === vIdx));
+    if (vDots.length > 0) {
+      vDots.forEach((d, i) => d.classList.toggle('active', i === vIdx));
+    }
   };
 
-  vNext.addEventListener('click', () => { vIdx = (vIdx + 1) % vSlides.length; updateV(); });
-  vPrev.addEventListener('click', () => { vIdx = (vIdx - 1 + vSlides.length) % vSlides.length; updateV(); });
-  vDots.forEach((dot, i) => dot.addEventListener('click', () => { vIdx = i; updateV(); }));
+  vNext.addEventListener('click', () => { 
+    vIdx = (vIdx + 1) % vSlides.length; 
+    updateV(); 
+  });
+  
+  vPrev.addEventListener('click', () => { 
+    vIdx = (vIdx - 1 + vSlides.length) % vSlides.length; 
+    updateV(); 
+  });
+  
+  if (vDots.length > 0) {
+    vDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => { 
+        vIdx = i; 
+        updateV(); 
+      });
+    });
+  }
+
+  // Recordatorio técnico para el Error 153 de YouTube en local
+  if (window.location.protocol === 'file:') {
+    console.warn("Talentópolis Info: Estás viendo la página vía file://. Los videos de YouTube podrían mostrar el Error 153. Usa un servidor local (Live Server) para verlos correctamente.");
+  }
 }
 
 

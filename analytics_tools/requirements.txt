@@ -1,4 +1,4 @@
-google-analytics-data
-google-cloud-storage
-requests
-google-auth
+google-analytics-data==0.22.0
+google-cloud-storage==2.14.0
+requests==2.33.1
+google-auth==2.52.0

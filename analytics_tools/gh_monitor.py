@@ -11,21 +11,34 @@ from google.analytics.data_v1beta.types import (
 # Configuración desde GitHub Secrets
 PROPERTY_ID = os.environ.get("GA4_PROPERTY_ID")
 WEBHOOK_URL = os.environ.get("GOOGLE_CHAT_WEBHOOK_URL")
-CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON") # Contenido del archivo credentials.json
+CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON")
+CREDENTIALS_BASE64 = os.environ.get("GOOGLE_CREDENTIALS_BASE64")
 
 HISTORY_FILE = "analytics_tools/notified_history.json"
 
 def get_analytics_client():
-    if not CREDENTIALS_JSON:
-        raise Exception("Falta la variable GOOGLE_CREDENTIALS_JSON")
+    creds_content = None
+    
+    if CREDENTIALS_BASE64:
+        print("Usando credenciales desde Base64...")
+        creds_content = base64.b64decode(CREDENTIALS_BASE64).decode('utf-8')
+    elif CREDENTIALS_JSON:
+        print("Usando credenciales desde JSON plano...")
+        creds_content = CREDENTIALS_JSON
+    else:
+        raise Exception("Faltan variables de entorno para credenciales (GOOGLE_CREDENTIALS_JSON o GOOGLE_CREDENTIALS_BASE64)")
     
     # Escribir temporalmente las credenciales para el cliente de Google
     with open("temp_creds.json", "w") as f:
-        f.write(CREDENTIALS_JSON)
+        f.write(creds_content)
     
-    client = BetaAnalyticsDataClient.from_service_account_json("temp_creds.json")
-    os.remove("temp_creds.json")
-    return client
+    try:
+        client = BetaAnalyticsDataClient.from_service_account_json("temp_creds.json")
+        return client
+    finally:
+        if os.path.exists("temp_creds.json"):
+            os.remove("temp_creds.json")
+
 
 def load_history():
     if os.path.exists(HISTORY_FILE):

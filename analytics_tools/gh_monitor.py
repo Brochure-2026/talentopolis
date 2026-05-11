@@ -13,31 +13,69 @@ PROPERTY_ID = os.environ.get("GA4_PROPERTY_ID")
 WEBHOOK_URL = os.environ.get("GOOGLE_CHAT_WEBHOOK_URL")
 CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON")
 CREDENTIALS_BASE64 = os.environ.get("GOOGLE_CREDENTIALS_BASE64")
+TOKEN_BASE64 = os.environ.get("GOOGLE_TOKEN_BASE64") # Contenido de token.json
 
 HISTORY_FILE = "analytics_tools/notified_history.json"
 
 def get_analytics_client():
-    creds_content = None
+    from google.oauth2.credentials import Credentials
+    from google.auth.transport.requests import Request
     
+    # PRIORIDAD 1: Token de Usuario (Bypass para cuentas de empresa/Workspace)
+    if TOKEN_BASE64:
+        try:
+            print("🔍 Detectado GOOGLE_TOKEN_BASE64. Intentando autenticación por Token de Usuario...")
+            token_data = json.loads(base64.b64decode(TOKEN_BASE64).decode('utf-8'))
+            creds = Credentials.from_authorized_user_info(token_data)
+            
+            if creds and creds.expired and creds.refresh_token:
+                print("🔄 El token ha expirado, intentando refrescar...")
+                creds.refresh(Request())
+                print("✅ Token refrescado exitosamente.")
+            
+            client = BetaAnalyticsDataClient(credentials=creds)
+            print("🚀 Cliente de Analytics inicializado con Token de Usuario.")
+            return client
+        except Exception as e:
+            print(f"⚠️ Error intentando usar el Token de Usuario: {e}")
+            print("Intentando métodos alternativos...")
+    
+    # PRIORIDAD 2: Credenciales de Cuenta de Servicio (Base64)
     if CREDENTIALS_BASE64:
-        print("Usando credenciales desde Base64...")
-        creds_content = base64.b64decode(CREDENTIALS_BASE64).decode('utf-8')
-    elif CREDENTIALS_JSON:
-        print("Usando credenciales desde JSON plano...")
-        creds_content = CREDENTIALS_JSON
-    else:
-        raise Exception("Faltan variables de entorno para credenciales (GOOGLE_CREDENTIALS_JSON o GOOGLE_CREDENTIALS_BASE64)")
+        try:
+            print("🔍 Detectado GOOGLE_CREDENTIALS_BASE64. Intentando autenticación por Cuenta de Servicio...")
+            creds_content = base64.b64decode(CREDENTIALS_BASE64).decode('utf-8')
+            with open("temp_creds.json", "w") as f:
+                f.write(creds_content)
+            
+            client = BetaAnalyticsDataClient.from_service_account_json("temp_creds.json")
+            if os.path.exists("temp_creds.json"):
+                os.remove("temp_creds.json")
+            print("🚀 Cliente de Analytics inicializado con Cuenta de Servicio (Base64).")
+            return client
+        except Exception as e:
+            if os.path.exists("temp_creds.json"):
+                os.remove("temp_creds.json")
+            print(f"⚠️ Error intentando usar Cuenta de Servicio (Base64): {e}")
+
+    # PRIORIDAD 3: Credenciales de Cuenta de Servicio (JSON plano)
+    if CREDENTIALS_JSON:
+        try:
+            print("🔍 Detectado GOOGLE_CREDENTIALS_JSON. Intentando autenticación...")
+            with open("temp_creds.json", "w") as f:
+                f.write(CREDENTIALS_JSON)
+            
+            client = BetaAnalyticsDataClient.from_service_account_json("temp_creds.json")
+            if os.path.exists("temp_creds.json"):
+                os.remove("temp_creds.json")
+            print("🚀 Cliente de Analytics inicializado con Cuenta de Servicio (JSON plano).")
+            return client
+        except Exception as e:
+            if os.path.exists("temp_creds.json"):
+                os.remove("temp_creds.json")
+            print(f"⚠️ Error intentando usar Cuenta de Servicio (JSON): {e}")
     
-    # Escribir temporalmente las credenciales para el cliente de Google
-    with open("temp_creds.json", "w") as f:
-        f.write(creds_content)
-    
-    try:
-        client = BetaAnalyticsDataClient.from_service_account_json("temp_creds.json")
-        return client
-    finally:
-        if os.path.exists("temp_creds.json"):
-            os.remove("temp_creds.json")
+    raise Exception("❌ No se pudo inicializar ninguna forma de autenticación. Verifica los Secretos de GitHub.")
 
 
 def load_history():

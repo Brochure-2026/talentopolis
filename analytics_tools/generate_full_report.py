@@ -7,22 +7,46 @@ from google.analytics.data_v1beta.types import (
 )
 
 def get_analytics_client():
-    # Intentar con token.json (autenticación de usuario)
+    from google.oauth2.credentials import Credentials
+    from google.auth.transport.requests import Request
+    
+    # 1. Intentar con GOOGLE_TOKEN_BASE64 (Entorno GitHub/Cloud)
+    token_base64 = os.environ.get("GOOGLE_TOKEN_BASE64")
+    if token_base64:
+        print("🔍 Usando GOOGLE_TOKEN_BASE64...")
+        token_data = json.loads(base64.b64decode(token_base64).decode('utf-8'))
+        creds = Credentials.from_authorized_user_info(token_data)
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        return BetaAnalyticsDataClient(credentials=creds)
+
+    # 2. Intentar con token.json (Local)
     token_path = "analytics_tools/token.json"
     if os.path.exists(token_path):
-        from google.oauth2.credentials import Credentials
-        from google.auth.transport.requests import Request
+        print("🔍 Usando token.json local...")
         creds = Credentials.from_authorized_user_file(token_path, ['https://www.googleapis.com/auth/analytics.readonly'])
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         return BetaAnalyticsDataClient(credentials=creds)
     
-    # Intentar con credentials.json (Service Account)
+    # 3. Intentar con GOOGLE_CREDENTIALS_BASE64
+    creds_base64 = os.environ.get("GOOGLE_CREDENTIALS_BASE64")
+    if creds_base64:
+        print("🔍 Usando GOOGLE_CREDENTIALS_BASE64...")
+        creds_content = base64.b64decode(creds_base64).decode('utf-8')
+        with open("temp_gen_creds.json", "w") as f:
+            f.write(creds_content)
+        client = BetaAnalyticsDataClient.from_service_account_json("temp_gen_creds.json")
+        os.remove("temp_gen_creds.json")
+        return client
+
+    # 4. Intentar con credentials.json (Local Service Account)
     creds_path = "analytics_tools/credentials.json"
     if os.path.exists(creds_path):
+        print("🔍 Usando credentials.json local...")
         return BetaAnalyticsDataClient.from_service_account_json(creds_path)
     
-    raise Exception("No se encontró ni token.json ni credentials.json")
+    raise Exception("❌ No se encontró ninguna credencial válida (token.json, credentials.json o variables Base64)")
 
 def generate_report():
     # Obtener PROPERTY_ID de .env o variables de entorno

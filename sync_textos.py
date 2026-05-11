@@ -27,6 +27,12 @@ def write_file(path, content):
     with open(path, 'w', encoding='utf-8') as f:
         f.write(content)
 
+def format_highlights(text):
+    """Convierte [texto] en <span class="section-highlight">texto</span>"""
+    if not text: return text
+    # Primero escapamos para seguridad, luego aplicamos el regex del span
+    return re.sub(r'\[(.*?)\]', r'<span class="section-highlight">\1</span>', text)
+
 def parse_txt():
     """Parsea el archivo TXT y devuelve un diccionario estructurado"""
     content = read_file(TXT_FILE)
@@ -122,16 +128,12 @@ def update_html(html, data):
     hero = data.get('HERO')
     if hero:
         log("Actualizando HERO...")
-        tagline = html_sanitizer.escape(hero["kv"].get("TAGLINE", ""))
-        titulo  = html_sanitizer.escape(hero["kv"].get("TÍTULO", ""))
-        sub     = html_sanitizer.escape(hero["kv"].get("SUBTÍTULO", ""))
+        tagline = format_highlights(html_sanitizer.escape(hero["kv"].get("TAGLINE", "")))
+        titulo  = format_highlights(html_sanitizer.escape(hero["kv"].get("TÍTULO", "")))
+        sub     = format_highlights(html_sanitizer.escape(hero["kv"].get("SUBTÍTULO", "")))
         
         html = re.sub(r'(<p class="hero-tagline[^>]*>).*?(</p>)', rf'\1{tagline}\2', html, flags=re.DOTALL)
         # El título principal tiene un span que queremos preservar. 
-        # Si el texto del TXT coincide con el patrón esperado, lo reinsertamos.
-        if "para expertos" in titulo:
-             titulo = titulo.replace("para expertos", '<span class="section-highlight">para expertos</span>')
-             
         html = re.sub(r'(<h1 class="[^"]*hero-heading-main[^>]*>).*?(</h1>)', rf'\1{titulo}\2', html, flags=re.DOTALL)
         html = re.sub(r'(<p class="hero-sub[^>]*>).*?(</p>)', rf'\1{sub}\2', html, flags=re.DOTALL)
 
@@ -139,13 +141,11 @@ def update_html(html, data):
     about = data.get('ABOUT')
     if about:
         log("Actualizando ABOUT...")
-        label = html_sanitizer.escape(about["kv"].get("LABEL", ""))
+        label = format_highlights(html_sanitizer.escape(about["kv"].get("LABEL", "")))
         html = re.sub(r'(<p class="[^"]*about-section-label[^>]*>).*?(</p>)', rf'\1{label}\2', html, flags=re.DOTALL)
         
-        # Título con span preservado
-        title = html_sanitizer.escape(about["kv"].get("TÍTULO", ""))
-        if "mirada editorial" in title:
-            title = title.replace("mirada editorial", '<span class="section-highlight">mirada editorial</span>')
+        # Título con span dinámico via corchetes
+        title = format_highlights(html_sanitizer.escape(about["kv"].get("TÍTULO", "")))
         html = re.sub(r'(<section id="about".*?<h2 class="section-title">).*?(</h2>)', rf'\1{title}\2', html, flags=re.DOTALL)
         
         # Párrafos
@@ -175,13 +175,10 @@ def update_html(html, data):
     services = data.get('SERVICES')
     if services:
         log("Actualizando SERVICES...")
-        label = html_sanitizer.escape(services["kv"].get("LABEL", ""))
-        titulo = html_sanitizer.escape(services["kv"].get("TÍTULO", ""))
-        sub = html_sanitizer.escape(services["kv"].get("SUBTÍTULO", ""))
+        label = format_highlights(html_sanitizer.escape(services["kv"].get("LABEL", "")))
+        titulo = format_highlights(html_sanitizer.escape(services["kv"].get("TÍTULO", "")))
+        sub = format_highlights(html_sanitizer.escape(services["kv"].get("SUBTÍTULO", "")))
         
-        if "impacto" in titulo:
-            titulo = titulo.replace("impacto", '<span class="section-highlight">impacto</span>')
-
         html = re.sub(r'(<section id="services".*?<p class="section-label">).*?(</p>)', rf'\1{label}\2', html, flags=re.DOTALL)
         html = re.sub(r'(<section id="services".*?<h2 class="section-title">).*?(</h2>)', rf'\1{titulo}\2', html, flags=re.DOTALL)
         html = re.sub(r'(<section id="services".*?<p class="section-sub[^>]*>).*?(</p>)', rf'\1{sub}\2', html, flags=re.DOTALL)
@@ -211,8 +208,8 @@ def update_html(html, data):
     workflow = data.get('WORKFLOW')
     if workflow:
         log("Actualizando WORKFLOW...")
-        html = re.sub(r'(<section id="workflow".*?<p class="section-label">).*?(</p>)', rf'\1{html_sanitizer.escape(workflow["kv"].get("LABEL", ""))}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="workflow".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(workflow["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="workflow".*?<p class="section-label">).*?(</p>)', rf'\1{format_highlights(html_sanitizer.escape(workflow["kv"].get("LABEL", "")))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="workflow".*?<h2 class="section-title">).*?(</h2>)', rf'\1{format_highlights(html_sanitizer.escape(workflow["kv"].get("TÍTULO", "")))}\2', html, flags=re.DOTALL)
         
         steps = workflow['lists'].get('PASOS', [])
         step_divs = re.findall(r'<div class="workflow-step">.*?</div>', html, flags=re.DOTALL)
@@ -232,8 +229,8 @@ def update_html(html, data):
     video_gallery = data.get('VIDEO-GALLERY')
     if video_gallery:
         log("Actualizando VIDEO-GALLERY...")
-        html = re.sub(r'(<section id="galeria-videos-brochure".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(video_gallery["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="galeria-videos-brochure".*?<p class="video-gallery-tagline">).*?(</p>)', rf'\1{html_sanitizer.escape(video_gallery["kv"].get("TAGLINE", ""))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="galeria-videos-brochure".*?<h2 class="section-title">).*?(</h2>)', rf'\1{format_highlights(html_sanitizer.escape(video_gallery["kv"].get("TÍTULO", "")))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="galeria-videos-brochure".*?<p class="video-gallery-tagline">).*?(</p>)', rf'\1{format_highlights(html_sanitizer.escape(video_gallery["kv"].get("TAGLINE", "")))}\2', html, flags=re.DOTALL)
         
         # Videos (Iframes)
         v_list = video_gallery['lists'].get('VIDEOS', [])
@@ -249,8 +246,8 @@ def update_html(html, data):
     showcase = data.get('SHOWCASE')
     if showcase:
         log("Actualizando SHOWCASE...")
-        html = re.sub(r'(<section id="videos".*?<p class="section-label">).*?(</p>)', rf'\1{html_sanitizer.escape(showcase["kv"].get("LABEL", ""))}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="videos".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(showcase["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="videos".*?<p class="section-label">).*?(</p>)', rf'\1{format_highlights(html_sanitizer.escape(showcase["kv"].get("LABEL", "")))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="videos".*?<h2 class="section-title">).*?(</h2>)', rf'\1{format_highlights(html_sanitizer.escape(showcase["kv"].get("TÍTULO", "")))}\2', html, flags=re.DOTALL)
         
         # Videos grid - solo títulos y subtítulos (URLs son más complejas si cambian)
         v_list = showcase['lists'].get('VIDEOS', [])
@@ -272,7 +269,7 @@ def update_html(html, data):
     programs = data.get('PROGRAMS')
     if programs:
         log("Actualizando PROGRAMS...")
-        html = re.sub(r'(<section id="programs".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(programs["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="programs".*?<h2 class="section-title">).*?(</h2>)', rf'\1{format_highlights(html_sanitizer.escape(programs["kv"].get("TÍTULO", "")))}\2', html, flags=re.DOTALL)
         
         p_list = programs['lists'].get('LISTADO DE PROGRAMAS', [])
         p_cards = re.findall(r'<a[^>]*class="program-card[^>]*>.*?</a>', html, flags=re.DOTALL)
@@ -296,11 +293,9 @@ def update_html(html, data):
     comunicarte = data.get('COMUNICARTE')
     if comunicarte:
         log("Actualizando COMUNICARTE...")
-        title = html_sanitizer.escape(comunicarte["kv"].get("TÍTULO", ""))
-        desc = html_sanitizer.escape(comunicarte["kv"].get("DESCRIPCIÓN", ""))
+        title = format_highlights(html_sanitizer.escape(comunicarte["kv"].get("TÍTULO", "")))
+        desc = format_highlights(html_sanitizer.escape(comunicarte["kv"].get("DESCRIPCIÓN", "")))
         
-        if "Próximo Lanzamiento" in title:
-            title = title.replace("Próximo Lanzamiento", '<span class="section-highlight">Próximo Lanzamiento</span>')
         html = re.sub(r'(<section id="comunicarte".*?<h2>).*?(</h2>)', rf'\1{title}\2', html, flags=re.DOTALL)
         html = re.sub(r'(<section id="comunicarte".*?<p class="section-sub">).*?(</p>)', rf'\1{desc}\2', html, flags=re.DOTALL)
         
@@ -330,15 +325,15 @@ def update_html(html, data):
     guests_gallery = data.get('GUESTS-GALLERY')
     if guests_gallery:
         log("Actualizando GUESTS-GALLERY...")
-        html = re.sub(r'(<section id="galeria-invitados".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(guests_gallery["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="galeria-invitados".*?<p class="section-tagline">).*?(</p>)', rf'\1{html_sanitizer.escape(guests_gallery["kv"].get("BAJADA", ""))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="galeria-invitados".*?<h2 class="section-title">).*?(</h2>)', rf'\1{format_highlights(html_sanitizer.escape(guests_gallery["kv"].get("TÍTULO", "")))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="galeria-invitados".*?<p class="section-tagline">).*?(</p>)', rf'\1{format_highlights(html_sanitizer.escape(guests_gallery["kv"].get("BAJADA", "")))}\2', html, flags=re.DOTALL)
 
     # 7c. SPOTIFY (Página 10)
     spotify = data.get('SPOTIFY')
     if spotify:
         log("Actualizando SPOTIFY...")
-        html = re.sub(r'(<section id="spotify".*?<h2 class="section-title">).*?(</h2>)', rf'\1{html_sanitizer.escape(spotify["kv"].get("TÍTULO", ""))}\2', html, flags=re.DOTALL)
-        html = re.sub(r'(<section id="spotify".*?<p class="section-sub[^>]*>).*?(</p>)', rf'\1{html_sanitizer.escape(spotify["kv"].get("SUBTÍTULO", ""))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="spotify".*?<h2 class="section-title">).*?(</h2>)', rf'\1{format_highlights(html_sanitizer.escape(spotify["kv"].get("TÍTULO", "")))}\2', html, flags=re.DOTALL)
+        html = re.sub(r'(<section id="spotify".*?<p class="section-sub[^>]*>).*?(</p>)', rf'\1{format_highlights(html_sanitizer.escape(spotify["kv"].get("SUBTÍTULO", "")))}\2', html, flags=re.DOTALL)
         
         s_list = spotify['lists'].get('PROGRAMAS', [])
         s_cards = re.findall(r'<a[^>]*class="spotify-card[^>]*>.*?</a>', html, flags=re.DOTALL)
@@ -358,8 +353,8 @@ def update_html(html, data):
             if i < len(t_cards):
                 parts = t_text.split(':', 1)
                 if len(parts) == 2:
-                    name = html_sanitizer.escape(re.sub(r'^\d+\.\s*', '', parts[0].strip()))
-                    role = html_sanitizer.escape(parts[1].strip())
+                    name = format_highlights(html_sanitizer.escape(re.sub(r'^\d+\.\s*', '', parts[0].strip())))
+                    role = format_highlights(html_sanitizer.escape(parts[1].strip()))
                     new_card = t_cards[i]
                     new_card = re.sub(r'<h3>.*?</h3>', f'<h3>{name}</h3>', new_card)
                     new_card = re.sub(r'<p>.*?</p>', f'<p>{role}</p>', new_card)
@@ -369,8 +364,8 @@ def update_html(html, data):
     contact = data.get('CONTACTO')
     if contact:
         log("Actualizando CONTACTO...")
-        html = re.sub(r'(<div class="cta-area-full[^>]*>\s*<h2>).*?(</h2>)', rf'\1\n        {html_sanitizer.escape(contact["kv"].get("CTA", ""))}\n      \2', html, flags=re.DOTALL)
-        html = re.sub(r'(<div class="cta-area-full[^>]*>.*?<p>).*?(</p>)', rf'\1\n        {html_sanitizer.escape(contact["kv"].get("SUB-CTA", ""))}\n      \2', html, flags=re.DOTALL)
+        html = re.sub(r'(<div class="cta-area-full[^>]*>\s*<h2>).*?(</h2>)', rf'\1\n        {format_highlights(html_sanitizer.escape(contact["kv"].get("CTA", "")))}\n      \2', html, flags=re.DOTALL)
+        html = re.sub(r'(<div class="cta-area-full[^>]*>.*?<p>).*?(</p>)', rf'\1\n        {format_highlights(html_sanitizer.escape(contact["kv"].get("SUB-CTA", "")))}\n      \2', html, flags=re.DOTALL)
         
         # Datos específicos en footer
         c_list = contact['lists'].get('DATOS DE CONTACTO', [])

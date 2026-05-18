@@ -139,7 +139,7 @@ INVITADOS:
 ================================================================================
 ### PÁGINA 9: GALERÍA DE INVITADOS
 ================================================================================
-TÍTULO: Algunos de nuestros invitados
+TÍTULO: Algunos de nuestros [invitados]
 BAJADA: Una pequeña mirada a quienes han sido parte de nuestros distintos programas
 RECURSOS: Carpeta assets/Fotos_para_el_brochure/
 

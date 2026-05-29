@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Talentópolis — El Futuro del Trabajo es Hoy</title>
+<meta name="description" content="Talentópolis: Productora audiovisual y medio de comunicación multiplataforma. PodCast, Video PodCast, webinars, producción y cobertura de eventos.">
+<meta name="theme-color" content="#060C1A">
+
+<!-- Google Tag Manager & Google tag (gtag.js) -->
+<script src="js/analytics_setup.js" async></script>
+
+<!-- Security: Content Security Policy -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://*.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: https://*.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://*.youtube.com https://*.googletagmanager.com; connect-src 'self' https: https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;">
+
+<!-- Open Graph / Social Media Metadata -->
+<meta property="og:title" content="Talentópolis — El Futuro del Trabajo es Hoy">
+<meta property="og:description" content="Productora audiovisual y medio de comunicación multiplataforma. PodCast, Video PodCast, webinars, producción y cobertura de eventos.">
+<meta property="og:image" content="assets/social_preview_v2.png?v=2">
+<meta property="og:url" content="https://line-21-cl.github.io/talentopolis/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css?v=3">
+<link rel="icon" href="assets/logos_talentopolis/logo-microfono.png" type="image/png">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PK24JT37"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ══════ HERO ══════ -->
+<section class="hero" id="hero">
+  <div class="container hero-content">
+    <div class="hero-logo-wrapper">
+      <img src="assets/logos_talentopolis/logo-white.png" alt="Talentópolis" class="hero-logo-xl">
+    </div>
+    <p class="hero-tagline hero-tagline-inline">{{ HERO_TAGLINE }}</p>
+    <h1 class="text-center hero-heading-main">{{ HERO_TÍTULO }}</h1>
+    <p class="hero-sub hero-sub-text">{{ HERO_SUBTÍTULO }}</p>
+  </div>
+</section>
+
+<!-- ══════ ABOUT ══════ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <h2 class="section-title">{{ ABOUT_TÍTULO }}</h2>
+        <p>{{ ABOUT_PÁRRAFO_1 }}</p>
+        <p>{{ ABOUT_PÁRRAFO_2 }}</p>
+      </div>
+      <div class="about-visual fade-up">
+
+        <!-- BEGIN ABOUT_METRICAS -->
+        <div class="stat-card{{ METRIC_ACCENT }}"><div class="number">{{ METRIC_VALUE }}</div><div class="label">{{ METRIC_LABEL }}</div></div>
+        <!-- END ABOUT_METRICAS -->
+
+        <!-- Redes sociales con colores de marca -->
+        <div class="social-links fade-up">
+          <a href="https://www.youtube.com/@talentopolis" class="social-link youtube" target="_blank" rel="noopener noreferrer" title="YouTube">
+            <img src="assets/Logos_Botones/youtube.svg" alt="YouTube">
+          </a>
+          <a href="https://www.instagram.com/talentopolis/" class="social-link instagram" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <img src="assets/Logos_Botones/instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/company/talentópolis-oficial/" class="social-link linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <img src="assets/Logos_Botones/linkedin.svg" alt="LinkedIn">
+          </a>
+          <a href="https://open.spotify.com/show/4C5OdIj2KqmfY1ij7VkTiG" class="social-link spotify" target="_blank" rel="noopener noreferrer" title="Spotify">
+            <img src="assets/Logos_Botones/spotify.svg" alt="Spotify">
+          </a>
+          <a href="https://www.facebook.com/TalentopolisOficial" class="social-link facebook" target="_blank" rel="noopener noreferrer" title="Facebook">
+            <img src="assets/Logos_Botones/facebook.svg" alt="Facebook">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SERVICES ══════ -->
+<section class="section section-dark" id="services">
+  <div class="container services-container-noscroll">
+    <div class="text-center fade-up">
+      <h2 class="section-title">{{ SERVICES_TÍTULO }}</h2>
+      <p class="section-sub mx-auto">{{ SERVICES_SUBTÍTULO }}</p>
+    </div>
+    <div class="services-grid">
+      <!-- BEGIN SERVICES_LIST -->
+      <div class="service-card fade-up">
+        <div class="service-icon">{{ SERVICE_ICON }}</div>
+        <h3>{{ SERVICE_TITLE }}</h3>
+        <p>{{ SERVICE_DESC }}</p>
+      </div>
+      <!-- END SERVICES_LIST -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════ DELIVERABLES ══════ -->
+<section class="section deliverables-section" id="deliverables">
+  <div class="container services-container-noscroll">
+    <div class="text-center fade-up">
+      <h2 class="section-title dlv-title">Los <span class="section-highlight">entregables</span> que recibe tu marca</h2>
+      <p class="section-sub mx-auto dlv-sub">Cada proyecto incluye un paquete completo de contenidos listos para publicar en todos tus canales.</p>
+    </div>
+    <div class="deliverables-hero-grid fade-up">
+      <!-- BEGIN DELIVERABLES -->
+      <div class="deliverable-hero-card">
+        <div class="dlv-icon">{{ DLV_ICON }}</div>
+        <h3>{{ DLV_TITLE }}</h3>
+        <p>{{ DLV_DESC }}</p>
+      </div>
+      <!-- END DELIVERABLES -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════ WORKFLOW ══════ -->
+<section class="section" id="workflow">
+  <div class="container">
+    <div class="text-center fade-up">
+      <h2 class="section-title">{{ WORKFLOW_TÍTULO }}</h2>
+      <p class="section-sub mx-auto">{{ WORKFLOW_SUBTÍTULO }}</p>
+    </div>
+    <div class="workflow-grid fade-up">
+      <div class="workflow-step">
+        <div class="step-number">1</div>
+        <h4>{{ WORKFLOW_STEP1_TITLE }}</h4>
+        <p>{{ WORKFLOW_STEP1_DESC }}</p>
+      </div>
+      <div class="workflow-step">
+        <div class="step-number">2</div>
+        <h4>{{ WORKFLOW_STEP2_TITLE }}</h4>
+        <p>{{ WORKFLOW_STEP2_DESC }}</p>
+      </div>
+      <div class="workflow-step">
+        <div class="step-number">3</div>
+        <h4>{{ WORKFLOW_STEP3_TITLE }}</h4>
+        <p>{{ WORKFLOW_STEP3_DESC }}</p>
+      </div>
+      <!-- Inverted row for cycle -->
+      <div class="workflow-step">
+        <div class="step-number">6</div>
+        <h4>{{ WORKFLOW_STEP6_TITLE }}</h4>
+        <p>{{ WORKFLOW_STEP6_DESC }}</p>
+      </div>
+      <div class="workflow-step">
+        <div class="step-number">5</div>
+        <h4>{{ WORKFLOW_STEP5_TITLE }}</h4>
+        <p>{{ WORKFLOW_STEP5_DESC }}</p>
+      </div>
+      <div class="workflow-step">
+        <div class="step-number">4</div>
+        <h4>{{ WORKFLOW_STEP4_TITLE }}</h4>
+        <p>{{ WORKFLOW_STEP4_DESC }}</p>
+      </div>
+      <!-- Mobile-only: flechas y texto de reinicio -->
+      <div class="wf-arrow-mobile wf-a15"></div>
+      <div class="wf-arrow-mobile wf-a25"></div>
+      <div class="wf-arrow-mobile wf-a35"></div>
+      <div class="wf-arrow-mobile wf-a45"></div>
+      <div class="wf-arrow-mobile wf-a55"></div>
+      <div class="wf-vamos-mobile">¡Vamos de nuevo!</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SECCIÓN GALERÍA VIDEOS ══════════ -->
+<section id="galeria-videos-brochure" class="section video-gallery-section">
+  <div class="video-gallery-inner">
+
+    <div class="video-gallery-header fade-up">
+      <h2 class="section-title">{{ VIDEOGALLERY_TÍTULO }}</h2>
+      <p class="video-gallery-tagline">{{ VIDEOGALLERY_TAGLINE }}</p>
+    </div>
+
+    <div class="video-gallery-stage fade-up">
+      <button class="vg-btn vg-prev" id="prevBrochureVideoBtn" aria-label="Video anterior">&#10094;</button>
+      <button class="vg-btn vg-next" id="nextBrochureVideoBtn" aria-label="Video siguiente">&#10095;</button>
+
+      <div class="vg-viewer">
+        <div class="vg-track" id="videoBrochureTrack">
+          <!-- BEGIN VIDEO_GALLERY_SLIDES -->
+          <div class="gallery-slide-full">
+            <div class="youtube-facade" data-id="{{ VIDEO_ID }}" data-title="Video {{ VIDEO_INDEX }}">
+              <img src="https://img.youtube.com/vi/{{ VIDEO_ID }}/maxresdefault.jpg" alt="Video {{ VIDEO_INDEX }}" class="facade-thumb">
+              <div class="facade-play-btn" aria-label="Reproducir Video {{ VIDEO_INDEX }}">▶</div>
+            </div>
+          </div>
+          <!-- END VIDEO_GALLERY_SLIDES -->
+        </div>
+      </div>
+    </div>
+
+    <div class="vg-dots" id="vgDots">
+      <!-- BEGIN VIDEO_GALLERY_DOTS -->
+      <span class="vg-dot{{ VG_DOT_ACTIVE }}"></span>
+      <!-- END VIDEO_GALLERY_DOTS -->
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ VIDEOS ══════ -->
+<section class="section" id="videos">
+  <div class="container">
+    <div class="text-center fade-up">
+      <h2 class="section-title">{{ SHOWCASE_TÍTULO }}</h2>
+      <p class="section-sub section-sub-dark mx-auto">{{ SHOWCASE_SUBTÍTULO }}</p>
+    </div>
+    <div class="videos-grid">
+      <!-- BEGIN SHOWCASE_LIST -->
+      <div class="video-card fade-up">
+        <a href="{{ SHOWCASE_URL }}" target="_blank" rel="noopener noreferrer" class="video-thumb-link">
+          <img src="{{ SHOWCASE_IMG }}" alt="{{ SHOWCASE_ALT }}" class="video-thumbnail">
+          <div class="play-overlay">▶</div>
+        </a>
+        <div class="video-card-body">
+          <h3><a href="{{ SHOWCASE_URL }}" target="_blank" rel="noopener noreferrer">{{ SHOWCASE_TITLE }}</a></h3>
+          <p>{{ SHOWCASE_SUB }}</p>
+        </div>
+      </div>
+      <!-- END SHOWCASE_LIST -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PROGRAMS ══════ -->
+<section class="section section-gray" id="programs">
+  <div class="container">
+    <div class="text-center fade-up">
+      <h2 class="section-title">{{ PROGRAMS_TÍTULO }}</h2>
+      <p class="section-sub mx-auto">{{ PROGRAMS_SUBTÍTULO }}</p>
+    </div>
+    <div class="programs-grid">
+      <!-- BEGIN PROGRAM_LIST -->
+      <a href="{{ PROGRAM_LINK }}" target="_blank" rel="noopener noreferrer" class="program-card fade-up">
+        <div class="program-card-body">
+          <img src="{{ PROGRAM_LOGO }}" alt="{{ PROGRAM_ALT }}" class="program-logo">
+          <h3>{{ PROGRAM_TITLE }} <span class="section-highlight">{{ PROGRAM_HIGHLIGHT }}</span></h3>
+          <p>{{ PROGRAM_DESC }}</p>
+        </div>
+      </a>
+      <!-- END PROGRAM_LIST -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════ COMUNICARTE ══════ -->
+<section class="section comunicarte-section" id="comunicarte">
+  <div class="container">
+    <div class="comunicarte-grid">
+      <div class="comunicarte-text fade-up">
+        <img src="assets/Logo_PodCast/logo-comunicarte.png" alt="ComunicArte" class="comunicarte-logo">
+        <h2>{{ COMUNICARTE_TÍTULO }}</h2>
+        <p class="section-sub">{{ COMUNICARTE_DESCRIPCIÓN }}</p>
+        
+        <div class="guest-carousel-container">
+          <div class="guest-carousel">
+            <!-- BEGIN COMUNICARTE_GUESTS -->
+            <div class="guest-card">
+              <img src="{{ GUEST_IMG }}" alt="{{ GUEST_NAME }}">
+              <div class="guest-info">
+                <h4>{{ GUEST_NAME }}</h4>
+                <span>{{ GUEST_ROLE }}</span>
+                <p>{{ GUEST_DESC }}</p>
+              </div>
+            </div>
+            <!-- END COMUNICARTE_GUESTS -->
+          </div>
+        </div>
+        <div class="c-dots">
+          <span class="c-dot"></span>
+          <span class="c-dot"></span>
+        </div>
+      </div>
+      <div class="comunicarte-visual fade-up">
+        <p class="maca-conduce-label">Conduce Macarena Saavedra</p>
+        <img src="assets/recursos_comunicArte/foto-maca.png" alt="ComunicArte" class="maca-main-img">
+        <div class="maca-social-btns">
+          <a href="https://www.instagram.com/macasaave/" target="_blank" rel="noopener noreferrer" class="maca-social-btn maca-btn-ig">
+            Instagram
+          </a>
+          <a href="https://www.linkedin.com/in/macarena-saavedra-diaz/" target="_blank" rel="noopener noreferrer" class="maca-social-btn maca-btn-li">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SECCIÓN GALERÍA INVITADOS ══════════ -->
+<section id="galeria-invitados" class="section">
+  <div class="container">
+    <div class="section-header-inline fade-up">
+      <h2 class="section-title">{{ GUESTSGALLERY_TÍTULO }}</h2>
+      <p class="section-tagline">{{ GUESTSGALLERY_BAJADA }}</p>
+    </div>
+
+    <div class="gallery-container fade-up">
+      <button class="gallery-nav prev" id="prevBtn" aria-label="Foto anterior">❮</button>
+      <button class="gallery-nav next" id="nextBtn" aria-label="Foto siguiente">❯</button>
+      
+      <div class="gallery-viewer">
+        <div class="gallery-track" id="galleryTrack">
+          <!-- Fotos variadas al inicio -->
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20241128_160330.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250116_150756.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250206_133016.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20241217_121346.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250808_171905.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          
+          <!-- Resto de la colección -->
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20241128_165115.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20241128_174227.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20241128_183316.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20241212_122237.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20241213_124517.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20241213_172654.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250123_123241.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250130_114621.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250130_114637.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250227_171224.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250516_152109.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250718_114512.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250718_125839.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250718_135123.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250718_143725.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250808_120955.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250808_134128.jpeg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250808_152119.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250822_133810.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250822_133822.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20250822_150555.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20251009_113602.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20251104_154204.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20251111_122607.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20251111_131837.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20251111_141112.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20251118_114018.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20251118_123804.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20251118_133613.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/20251118_145047.jpg" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/IMG_7713.JPG" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/IMG_7735.JPG" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/IMG_7775.JPG" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/IMG_7790.JPG" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/IMG_7853.JPG" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/IMG_7932.JPG" alt="Invitado Talentópolis" loading="lazy"></div>
+          <div class="gallery-slide"><img src="assets/Fotos_para_el_brochure/IMG_8037.JPG" alt="Invitado Talentópolis" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════ SPOTIFY PROGRAMS ══════ -->
+<section class="section section-gray" id="spotify">
+  <div class="container">
+    <div class="text-center fade-up">
+      <h2 class="section-title">{{ SPOTIFY_TÍTULO }}</h2>
+      <p class="section-sub mx-auto">{{ SPOTIFY_SUBTÍTULO }}</p>
+    </div>
+    <div class="spotify-grid fade-up">
+      <!-- BEGIN SPOTIFY_LIST -->
+      <a href="{{ SPOTIFY_URL }}" class="spotify-card" target="_blank" rel="noopener noreferrer">
+        <img src="{{ SPOTIFY_IMG }}" alt="{{ SPOTIFY_ALT }}">
+        <div class="spotify-badge"><img src="assets/Logos_Botones/spotify.svg" alt="Spotify"></div>
+      </a>
+      <!-- END SPOTIFY_LIST -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════ TEAM ══════ -->
+<section class="section section-gray" id="team">
+  <div class="container">
+    <div class="text-center fade-up">
+      <h2 class="section-title">{{ EQUIPO_TÍTULO }}</h2>
+    </div>
+    <div class="team-grid">
+      <!-- BEGIN EQUIPO_LIST -->
+      <div class="team-card fade-up">
+        <a href="{{ MEMBER_LINK }}" target="_blank" rel="noopener noreferrer" class="team-photo-link"><img src="{{ MEMBER_IMG }}" alt="{{ MEMBER_NAME }}" loading="lazy"></a>
+        <h3>{{ MEMBER_NAME }}</h3>
+        <p>{{ MEMBER_ROLE }}</p>
+        <a href="{{ MEMBER_LINK }}" target="_blank" rel="noopener noreferrer" class="team-linkedin"><img src="assets/Logos_Botones/linkedin.svg" alt="LinkedIn"></a>
+      </div>
+      <!-- END EQUIPO_LIST -->
+    </div>
+
+    <div class="partners-banner fade-up">
+      <div class="partners-logos">
+        <img src="assets/Logo_PodCast/Logo_ODM.png"              alt="Organizaciones del Mañana">
+        <img src="assets/Logo_PodCast/Logo_aula_T1.png"          alt="Del Aula a la Cancha">
+        <img src="assets/Logo_PodCast/Logo_coffe.png"            alt="CoffeeBreak con Talento">
+        <img src="assets/Logo_PodCast/Logo_mujersinpausa.png"    alt="Mujeres Sin Pausa">
+      </div>
+      <p class="partners-text"><span class="section-highlight">+</span> Una amplia, variada y robusta red de Partners y aliados del mundo audiovisual.</p>
+      <div class="partners-logos">
+        <img src="assets/Logo_PodCast/logo_CISOs.png"            alt="CISO's Club">
+        <img src="assets/Logo_PodCast/logo_FF.png"               alt="Finanzas del Futuro">
+        <img src="assets/Logo_PodCast/logo-comunicarte.png"      alt="ComunicArte">
+        <img src="assets/Logo_PodCast/Logo_conocimientoencapsulado.png" alt="Conocimiento Encapsulado">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ B2B PARTNERSHIP (Slide 12 — Visión Plus) ══════ -->
+<section class="section b2b-partner-slide" id="b2b-partner">
+  <div class="b2b-spotlight b2b-spotlight-1"></div>
+  <div class="b2b-spotlight b2b-spotlight-2"></div>
+  <div class="b2b-spotlight b2b-spotlight-3"></div>
+
+  <!-- Decorative broadcast signal rings -->
+  <div class="b2b-signal-rings" aria-hidden="true">
+    <div class="b2b-ring b2b-ring-1"></div>
+    <div class="b2b-ring b2b-ring-2"></div>
+    <div class="b2b-ring b2b-ring-3"></div>
+  </div>
+
+  <div class="container">
+
+    <div class="b2b-partner-container">
+      
+      <!-- Left Column: Branding / Title -->
+      <div class="b2b-left fade-up">
+        <h2 class="b2b-title">Tu contenido también en <span class="b2b-highlight">televisión</span></h2>
+        <div class="b2b-main-logo-container">
+          <img src="assets/logos_visionplus/visionplustvblanco.png" alt="Visión Plus TV" class="b2b-main-logo">
+        </div>
+        <p class="b2b-description">
+          Nuestros contenidos no solo se producen: se distribuyen estratégicamente en múltiples canales digitales y televisivos, maximizando visibilidad, alcance y reutilización del contenido.
+        </p>
+
+      </div>
+
+      <!-- Right Column: Secondary Networks / Cables -->
+      <div class="b2b-right fade-up">
+        <!-- TV Cables Chile Card -->
+        <div class="b2b-card b2b-card--cable">
+          <div class="b2b-card-glow"></div>
+          <div class="b2b-card-logo-wrapper">
+            <img src="assets/logos_visionplus/tvcablesdechile.png" alt="TV Cables de Chile" class="b2b-card-img">
+          </div>
+          <div class="b2b-card-content">
+            <span class="b2b-card-number">+100</span>
+            <span class="b2b-card-text">Cableoperadores locales de Arica a Punta Arenas</span>
+          </div>
+        </div>
+
+        <!-- America Vivo Card -->
+        <div class="b2b-card b2b-card--america">
+          <div class="b2b-card-glow"></div>
+          <div class="b2b-card-logo-wrapper">
+            <img src="assets/logos_visionplus/americavivo.png" alt="América Vivo" class="b2b-card-img">
+          </div>
+          <div class="b2b-card-content">
+            <span class="b2b-card-tag">Streaming HD</span>
+            <span class="b2b-card-text">Transmisión internacional con alcance continental</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- Bottom Row: 3 inline boxes (Mundo, Zapping, GTD) -->
+    <div class="b2b-bottom fade-up">
+      <h3 class="b2b-bottom-title">Presentes en Grandes Cableoperadores</h3>
+      <div class="b2b-grid-3">
+        <!-- Mundo Card -->
+        <div class="b2b-mini-card">
+          <div class="b2b-mini-glow"></div>
+          <div class="b2b-mini-logo-wrapper">
+            <img src="assets/logos_visionplus/mundo.png" alt="Mundo" class="b2b-mini-img">
+          </div>
+          <div class="b2b-mini-info">
+            <span class="b2b-channel-badge">Canal 227</span>
+            <span class="b2b-channel-label">Mundo</span>
+          </div>
+        </div>
+
+        <!-- Zapping Card -->
+        <div class="b2b-mini-card">
+          <div class="b2b-mini-glow"></div>
+          <div class="b2b-mini-logo-wrapper">
+            <img src="assets/logos_visionplus/zapping.png" alt="Zapping" class="b2b-mini-img">
+          </div>
+          <div class="b2b-mini-info">
+            <span class="b2b-channel-badge">Canal 171</span>
+            <span class="b2b-channel-label">Zapping</span>
+          </div>
+        </div>
+
+        <!-- GTD Card -->
+        <div class="b2b-mini-card">
+          <div class="b2b-mini-glow"></div>
+          <div class="b2b-mini-logo-wrapper">
+            <img src="assets/logos_visionplus/gtdtelesur.png" alt="GTD Telesur" class="b2b-mini-img">
+          </div>
+          <div class="b2b-mini-info">
+            <span class="b2b-channel-badge">Canal 185</span>
+            <span class="b2b-channel-label">GTD Telesur</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ CTA & FOOTER ONE-PAGE ══════ -->
+<section id="contact" class="contact-section-full">
+  <div class="container">
+    
+    <!-- CTA Cards -->
+    <div class="cta-cards-grid">
+
+      <!-- Card 1: Contenido -->
+      <div class="cta-card cta-card--content fade-up">
+        <div class="cta-card-top">
+          <span class="cta-card-icon">🎙️</span>
+          <span class="cta-card-badge">PodCast & Contenido</span>
+        </div>
+        <h2>{{ CONTACTO_CTA }}</h2>
+        <p>{{ CONTACTO_SUB_CTA }}</p>
+        <div class="cta-card-btns">
+          <a href="https://wa.me/56940478605" target="_blank" rel="noopener noreferrer" class="cta-card-btn cta-btn-outline">
+            📅 Agendar Reunión
+          </a>
+          <a href="mailto:contacto@talentopolis.cl" class="cta-card-btn cta-btn-outline">
+            ✉ Enviar Correo
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Auspiciadores -->
+      <div class="cta-card cta-card--urgency fade-up">
+        <div class="cta-card-top">
+          <span class="cta-card-icon">🤝</span>
+          <span class="cta-card-badge">Auspiciadores</span>
+        </div>
+        <h2>¿Quieres que tu marca llegue a miles?</h2>
+        <p>Súmate como auspiciador y haz que tu marca aparezca en nuestro contenido. Sé parte de una familia que crece cada día con propósito y alcance real.</p>
+        <a href="https://wa.me/56940478605" target="_blank" rel="noopener noreferrer" class="cta-card-btn cta-btn-outline cta-btn-centered">
+          Quiero ser auspiciador
+        </a>
+      </div>
+
+      <!-- Card 3: Urgencia -->
+      <div class="cta-card cta-card--sponsor fade-up">
+        <div class="cta-card-top">
+          <span class="cta-card-icon">⚡</span>
+          <span class="cta-card-badge">¡Oportunidad única!</span>
+        </div>
+        <h2>No dejes pasar esta oportunidad</h2>
+        <p>El futuro del contenido es hoy. Cada día que esperas es un día que alguien más está contando su historia. ¡Seamos nosotros quienes contemos la tuya!</p>
+        <a href="https://wa.me/56940478605" target="_blank" rel="noopener noreferrer" class="cta-card-btn cta-btn-outline cta-btn-centered">
+          Contáctanos ahora
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Footer Area -->
+    <div class="footer-wrapper-full">
+      <hr>
+      
+      <div class="footer-simple-grid">
+        <div class="footer-col-brand">
+          <img src="assets/logos_talentopolis/logo-white.png" alt="Talentópolis">
+          <p>{{ CONTACTO_MARCA }}</p>
+          <a href="assets/Brochure_Talentopolis_2026.pdf" onclick="downloadDossier(event)" class="btn-contact-base btn-dossier">
+            📄 Descargar Dossier PDF
+          </a>
+        </div>
+
+        <div class="footer-col-contact">
+          <h4>Contacto</h4>
+          <ul>
+            <li class="footer-contact-item wsp">
+              <a href="https://wa.me/56940478605" target="_blank" rel="noopener noreferrer">
+                <img src="assets/Logos_Botones/whatsapp.svg" alt="WhatsApp">
+                <span>{{ CONTACTO_WHATSAPP }}</span>
+              </a>
+            </li>
+            <li class="footer-contact-item mail">
+              <a href="mailto:contacto@talentopolis.cl">
+                <img src="assets/Logos_Botones/gmail.svg" alt="Email">
+                <span>{{ CONTACTO_EMAIL }}</span>
+              </a>
+            </li>
+            <li class="footer-contact-item addr">
+              <a href="https://www.google.com/maps/place/Antonio+Bellet+444,+oficina+203,+7500032+Providencia,+Regi%C3%B3n+Metropolitana/@-33.4243348,-70.6224296,17z/data=!3m1!4b1!4m6!3m5!1s0x9662cf618c1b0199:0x242247d7cae8061e!8m2!3d-33.4243393!4d-70.6198547!16s%2Fg%2F11yjg9v2xh?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                <img src="assets/Logos_Botones/maplibre.svg" alt="Dirección">
+                <span>{{ CONTACTO_DIRECCION }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-copyright">
+        <p>{{ CONTACTO_COPYRIGHT }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SCRIPTS ══════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" integrity="sha384-9EQoUIJYrv09/oYhSxnw1VpLcfPw3BM9dE7+D/3wGUPeLLa7F9Z6OAoD+i/M6FK9" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js" integrity="sha384-L0sjdcIWJ156WmvbxIBHx79j1WrCqANCyw456nl/aPWSYiHNywEU2VIAcbSJeIiX" crossorigin="anonymous"></script>
+<script src="scripts.js" defer></script>
+</body>
+</html>

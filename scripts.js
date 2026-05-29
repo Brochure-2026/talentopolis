@@ -196,9 +196,11 @@ document.querySelectorAll('.stat-card .number').forEach(el => {
    7. VANTA.NET — Fondo animado Hero
    ---------------------------------------------------------- */
 if (typeof VANTA !== 'undefined') {
+  const isMobile = window.innerWidth <= 768;
+  
   VANTA.NET({
     el: '.hero',
-    mouseControls: true,
+    mouseControls: !isMobile,
     touchControls: false,
     gyroControls: false,
     minHeight: 200,
@@ -207,38 +209,154 @@ if (typeof VANTA !== 'undefined') {
     scaleMobile: 1.0,
     color: 0x0057B8,
     backgroundColor: 0x060C1A,
-    points: 12,
-    maxDistance: 22,
-    spacing: 18,
+    points: isMobile ? 8 : 12,
+    maxDistance: isMobile ? 18 : 22,
+    spacing: isMobile ? 22 : 18,
     showDots: true
   });
 }
 
 
-/* ----------------------------------------------------------
-   8. DESCARGA FORZADA DEL DOSSIER
-   ---------------------------------------------------------- */
-function downloadDossier(e) {
-  e.preventDefault();
-  const url = 'assets/Brochure_Talentopolis_2026.pdf';
-  const filename = 'Brochure_Talentopolis_2026.pdf';
 
-  fetch(url)
-    .then(res => {
-      if (!res.ok) throw new Error('fetch failed');
-      return res.blob();
-    })
-    .then(blob => {
-      const blobUrl = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = blobUrl;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
-    })
-    .catch(() => {
-      window.open(url, '_blank');
+/* ----------------------------------------------------------
+   9. LAZY LOADING YOUTUBE FACADE CLICK HANDLER
+   ---------------------------------------------------------- */
+document.querySelectorAll('.youtube-facade').forEach(facade => {
+  facade.addEventListener('click', function() {
+    const videoId = this.getAttribute('data-id');
+    const videoTitle = this.getAttribute('data-title') || 'Video';
+    
+    // Create the iframe
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
+    iframe.setAttribute('title', videoTitle);
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', 'true');
+    
+    // Clear the facade contents and inject the iframe
+    this.innerHTML = '';
+    this.appendChild(iframe);
+  });
+});
+
+
+/* ----------------------------------------------------------
+   10. COMUNICARTE GUEST CAROUSEL (Interactive with Autoplay & Hover Pause)
+   ---------------------------------------------------------- */
+const cTrack = document.querySelector('.comunicarte-text .guest-carousel');
+const cDots = document.querySelectorAll('.comunicarte-text .c-dot');
+const cContainer = document.querySelector('.comunicarte-text .guest-carousel-container');
+
+if (cTrack && cDots.length > 0) {
+  let cIdx = 0;
+  let autoplayInterval;
+
+  const updateCarousel = () => {
+    if (cIdx === 0) {
+      cTrack.style.transform = 'translateX(0)';
+    } else {
+      cTrack.style.transform = 'translateX(calc(-50% - 7.5px))';
+    }
+    cDots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === cIdx);
     });
+  };
+
+  const nextSlide = () => {
+    cIdx = (cIdx + 1) % cDots.length;
+    updateCarousel();
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    autoplayInterval = setInterval(nextSlide, 5000);
+  };
+
+  const stopAutoplay = () => {
+    if (autoplayInterval) clearInterval(autoplayInterval);
+  };
+
+  // Click on dots
+  cDots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      cIdx = idx;
+      updateCarousel();
+      startAutoplay(); // Reset timer on click
+    });
+  });
+
+  // Pause on hover
+  /*
+  if (cContainer) {
+    cContainer.addEventListener('mouseenter', stopAutoplay);
+    cContainer.addEventListener('mouseleave', startAutoplay);
+  }
+
+  // Also pause if hover directly on the dots area for better usability
+  const dotsContainer = document.querySelector('.comunicarte-text .c-dots');
+  if (dotsContainer) {
+    dotsContainer.addEventListener('mouseenter', stopAutoplay);
+    dotsContainer.addEventListener('mouseleave', startAutoplay);
+  }
+  */
+
+  // Initial start
+  startAutoplay();
 }
+
+
+/* ----------------------------------------------------------
+   ANTIGRAVITY POLISH — design spells
+   ---------------------------------------------------------- */
+
+/* Hero scroll indicator: aparece en hero, se desvanece al scrollear */
+(function initScrollIndicator() {
+  const hero = document.querySelector('.hero');
+  if (!hero || document.querySelector('.hero-scroll-indicator')) return;
+
+  const el = document.createElement('div');
+  el.className = 'hero-scroll-indicator';
+  el.setAttribute('aria-hidden', 'true');
+  el.innerHTML = '<div class="scroll-chevron"></div><div class="scroll-chevron"></div>';
+  hero.appendChild(el);
+
+  const onScroll = () => {
+    el.style.opacity = String(Math.max(0, 1 - window.scrollY / 130));
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+}());
+
+
+/* 3D tilt en stat cards y service cards
+   Solo en dispositivos con puntero preciso (mouse, no touch) y sin prefers-reduced-motion */
+const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+const noReducedMotion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (isFinePointer && noReducedMotion) {
+
+  document.querySelectorAll('.stat-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width  - 0.5) * 16;
+      const y = ((e.clientY - r.top)  / r.height - 0.5) * -16;
+      card.style.transform = `perspective(600px) translateY(-6px) rotateX(${y}deg) rotateY(${x}deg)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    /* Seguridad touch: resetear si se pierde el foco */
+    card.addEventListener('touchend',   () => { card.style.transform = ''; }, { passive: true });
+  });
+
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width  - 0.5) * 8;
+      const y = ((e.clientY - r.top)  / r.height - 0.5) * -8;
+      card.style.transform = `perspective(700px) translateY(-6px) rotateX(${y}deg) rotateY(${x}deg)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    card.addEventListener('touchend',   () => { card.style.transform = ''; }, { passive: true });
+  });
+
+}
+

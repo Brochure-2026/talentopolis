@@ -8,7 +8,7 @@
 ### PÁGINA 1: HERO
 ================================================================================
 TAGLINE: EL FUTURO DEL TRABAJO ES HOY
-TÍTULO: Convertimos ideas en contenido audiovisual de alto impacto para expertos y marcas
+TÍTULO: Convertimos ideas en contenido audiovisual de alto impacto para [expertos y marcas]
 SUBTÍTULO: Somos una productora audiovisual y medio de comunicación multiplataforma que diseña, produce y distribuye PodCast, Video PodCast, cápsulas y contenidos para marcas, líderes y organizaciones que buscan posicionar su conocimiento
 
 ================================================================================
@@ -23,8 +23,8 @@ MÉTRICAS:
 2. +10 — Programas/PodCast
 3. +1.3M — Views
 4. +7.2K — Followers de otras RR.SS.
-5. +15.0K — Likes
-6. +35.0K — Horas de visualización
+5. +15.7K — Likes
+6. +35.9K — Horas de visualización
 
 REDES SOCIALES: YouTube / Instagram / LinkedIn / Spotify / Facebook
 

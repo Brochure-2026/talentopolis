@@ -287,7 +287,6 @@ if (cTrack && cDots.length > 0) {
   });
 
   // Pause on hover
-  /*
   if (cContainer) {
     cContainer.addEventListener('mouseenter', stopAutoplay);
     cContainer.addEventListener('mouseleave', startAutoplay);
@@ -299,7 +298,6 @@ if (cTrack && cDots.length > 0) {
     dotsContainer.addEventListener('mouseenter', stopAutoplay);
     dotsContainer.addEventListener('mouseleave', startAutoplay);
   }
-  */
 
   // Initial start
   startAutoplay();

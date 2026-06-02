@@ -291,7 +291,7 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
 .section-dark .section-title { color:var(--white); }
 .section-sub { color:var(--gray-600); font-size:1.05rem; max-width:600px; margin-bottom:20px; }
 .section-dark .section-sub { color:rgba(255,255,255,.5); }
-#programs .section-sub,
+#programs .section-sub { max-width: 100%; color: #000000; }
 #spotify  .section-sub { max-width: 100%; }
 .text-center { text-align:center; }
 .mx-auto { margin-left:auto; margin-right:auto; }
@@ -418,8 +418,39 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
 .service-card p { color:rgba(255,255,255,.5); font-size:.9rem; line-height:1.5; }
 
 /* ══════════ PROGRAMS ══════════ */
-#programs { padding: 20px 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; overflow: visible; }
-#programs .container { display: flex; flex-direction: column; justify-content: center; }
+#programs {
+  padding: 20px 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+#programs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 100%;
+  background-image: url('assets/8_derecha.jpg?v=1');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%);
+}
+#programs .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
 .programs-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:6px; }
 .program-card {
   background:var(--white); border-radius:var(--radius); overflow:hidden;
@@ -789,7 +820,7 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   right: 0;
   width: 75%;
   height: 100%;
-  background-image: url('assets/5_derecha.jpg?v=202605281752');
+  background-image: url('assets/5_derecha_nueva.jpg?v=1');
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -2793,3 +2824,5 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
     animation: none !important;
   }
 }
+
+

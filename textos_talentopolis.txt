@@ -73,12 +73,13 @@ TÍTULO: Un vistazo de lo que [producimos]
 TAGLINE: Un poco más cerca de todo lo que involucra ser y hacer en Talentópolis, donde más que una productora somos una familia.
 
 VIDEOS (Carrusel):
-1. https://www.youtube.com/embed/GplivO0oSqc
-2. https://www.youtube.com/embed/2O1S-ZmDUb0
-3. https://www.youtube.com/embed/S8xQ-qto3PA
-4. https://www.youtube.com/embed/PlVFLJ3IiMU
-5. https://www.youtube.com/embed/dhH71Ic-KAw
-6. https://www.youtube.com/embed/EDkDj66PbF0
+1. https://youtube.com/shorts/Pxp5aGeaaqw?si=Fc2GntEANGQvljDj
+2. https://youtube.com/shorts/xsvsK39vUbA?si=ODavGxYnNI6iw91a
+3. https://www.youtube.com/embed/GplivO0oSqc
+4. https://www.youtube.com/embed/2O1S-ZmDUb0
+5. https://www.youtube.com/embed/S8xQ-qto3PA
+6. https://www.youtube.com/embed/PlVFLJ3IiMU
+7. https://www.youtube.com/embed/EDkDj66PbF0
 
 ================================================================================
 ### PÁGINA 6: SHOWCASE (Producciones Destacadas)

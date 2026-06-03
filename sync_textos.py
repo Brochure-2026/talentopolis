@@ -365,7 +365,7 @@ def parse_textos():
     # Slides y dots para la galería de videos
     p_data['VIDEO_GALLERY_SLIDES'] = []
     p_data['VIDEO_GALLERY_DOTS'] = []
-    for i, url in enumerate(vg_urls[:6]):
+    for i, url in enumerate(vg_urls):
         video_id = url.split('/')[-1].split('?')[0]
         p_data['VIDEO_GALLERY_SLIDES'].append({
             'VIDEO_URL': url,

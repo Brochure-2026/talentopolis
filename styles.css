@@ -399,8 +399,6 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.30);
   transition: transform .3s cubic-bezier(0.165,0.84,0.44,1), border-color .3s ease, box-shadow 0.3s ease, background 0.3s ease;
   position:relative; overflow:hidden;
-  will-change: transform;
-  backface-visibility: hidden;
 }
 .service-card::before {
   content:''; position:absolute; top:0; left:0; right:0; height:3px;
@@ -1030,8 +1028,6 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   text-align: center;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
   transition: transform 0.3s cubic-bezier(0.165,0.84,0.44,1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform;
-  backface-visibility: hidden;
 }
 .deliverable-hero-card:hover {
   transform: translateY(-6px);
@@ -1210,8 +1206,6 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
 .fade-up {
   opacity:0; transform:translateY(40px);
   transition:opacity .7s ease, transform .7s ease;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
 }
 .fade-up.visible { opacity:1; transform:translateY(0); }
 

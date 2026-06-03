@@ -90,16 +90,16 @@ def get_program_link(title):
 def get_guest_img(name):
     n = name.lower()
     if "rincón" in n or "rincon" in n:
-        return "assets/fotos_invitado_comunicarte/foto-rincon.png"
+        return "assets/fotos_invitado_comunicarte/foto-rincon.webp"
     elif "melo" in n:
-        return "assets/fotos_invitado_comunicarte/foto-melo.png"
+        return "assets/fotos_invitado_comunicarte/foto-melo.webp"
     elif "daza" in n:
-        return "assets/fotos_invitado_comunicarte/foto-daza.png"
+        return "assets/fotos_invitado_comunicarte/foto-daza.webp"
     elif "quiroga" in n:
         return "assets/quiroga_youtube.jpg"
     elif "mewes" in n:
         return "assets/mewes.jpg"
-    return "assets/fotos_invitado_comunicarte/foto-rincon.png"
+    return "assets/fotos_invitado_comunicarte/foto-rincon.webp"
 
 def get_spotify_img(name):
     n = name.lower()

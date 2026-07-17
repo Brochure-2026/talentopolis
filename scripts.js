@@ -132,6 +132,8 @@ function copyToClipboard(text, el) {
     toast.className = 'copy-toast';
     el.appendChild(toast);
     setTimeout(() => toast.remove(), 1500);
+  }).catch(err => {
+    console.error('Error al copiar al portapapeles:', err);
   });
 }
 
@@ -222,6 +224,17 @@ if (typeof VANTA !== 'undefined') {
    9. LAZY LOADING YOUTUBE FACADE CLICK HANDLER
    ---------------------------------------------------------- */
 document.querySelectorAll('.youtube-facade').forEach(facade => {
+  const thumb = facade.querySelector('img');
+  if (thumb) {
+    thumb.addEventListener('error', function() {
+      this.style.opacity = '0';
+      const icon = document.createElement('div');
+      icon.style.cssText = 'width:80px;height:80px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;position:absolute;z-index:5;';
+      icon.innerHTML = '▶';
+      facade.appendChild(icon);
+    });
+  }
+  
   facade.addEventListener('click', function() {
     const videoId = this.getAttribute('data-id');
     const videoTitle = this.getAttribute('data-title') || 'Video';
@@ -268,14 +281,17 @@ if (cTrack && cDots.length > 0) {
     updateCarousel();
   };
 
+  const stopAutoplay = () => {
+    if (autoplayInterval) clearInterval(autoplayInterval);
+  };
+
   const startAutoplay = () => {
     stopAutoplay();
     autoplayInterval = setInterval(nextSlide, 5000);
   };
 
-  const stopAutoplay = () => {
-    if (autoplayInterval) clearInterval(autoplayInterval);
-  };
+  // Limpieza automática del intervalo al destruir el componente
+  window.addEventListener('beforeunload', stopAutoplay);
 
   // Click on dots
   cDots.forEach((dot, idx) => {

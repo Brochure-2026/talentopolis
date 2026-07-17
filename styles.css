@@ -504,6 +504,96 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
 }
 .program-badge.new { background:#e8faf0; color:#0d9; }
 
+.podcast-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .podcast-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  .podcast-grid > div {
+    text-align: center !important;
+  }
+  .podcast-grid img {
+    margin: 0 auto 15px auto !important;
+  }
+}
+
+/* ══════════ RESILITY ══════════ */
+#resility {
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
+}
+#resility::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 100%;
+  background-image: url('assets/Resility%20podcast/4884273-scaled.jpg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%);
+}
+#resility .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ══════════ INGENIA ══════════ */
+#ingenia {
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
+}
+#ingenia::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 100%;
+  background-image: url('assets/IngenIA%20santo%20tomas/image_extracted_1.jpg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%);
+}
+#ingenia .container {
+  position: relative;
+  z-index: 2;
+}
+#ingenia .section-highlight {
+  color: #009647 !important;
+  text-shadow: 0 0 28px rgba(0, 150, 71, 0.15) !important;
+}
+
 /* ══════════ COMUNICARTE ══════════ */
 .comunicarte-section { 
   background:linear-gradient(135deg,#1a0a30 0%,#2d1b69 50%,#1a0a30 100%); 
@@ -541,55 +631,87 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
 .comunicarte-logo { max-width:180px; margin-bottom:10px; }
 .comunicarte-text h2 { color:var(--white); }
 .comunicarte-text p { color:rgba(255,255,255,.65); font-size:1.05rem; margin-bottom:10px; }
-.guest-carousel-container { overflow: hidden; width: 100%; position: relative; margin-top: 10px; }
-.guest-carousel {
-  display: flex;
+.comunicarte-playlist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 15px;
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  margin-top: 15px;
+  width: 100%;
 }
-.guest-card {
-  flex: 0 0 calc(50% - 8px); /* Para mostrar 2 juntos */
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 12px; border-radius: var(--radius);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s cubic-bezier(0.165,0.84,0.44,1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+@media (max-width: 768px) {
+  .comunicarte-playlist {
+    grid-template-columns: 1fr;
+  }
 }
-.guest-card:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 107, 43, 0.4);
-  box-shadow: 0 16px 36px rgba(255, 107, 43, 0.12);
-}
-.guest-card img {
-  width: 100%; max-width: 160px; aspect-ratio: 1/1; object-fit: cover;
-  border-radius: var(--radius-sm); margin-bottom: 10px;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-.guest-info h4 { color:var(--white); font-size:0.9rem; margin-bottom:2px; }
-.guest-info span { color:var(--orange); font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:1px; }
-.guest-info p { font-size: 0.75rem; opacity: 0.7; color: white; margin-top: 8px; line-height: 1.3; }
-
-.c-dots {
+.playlist-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding-top: 12px;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
 }
-.c-dot {
-  width: 8px;
-  height: 8px;
+.playlist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(255, 107, 43, 0.25);
+}
+.playlist-card-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.playlist-card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.playlist-card:hover .playlist-card-thumbnail img {
+  transform: scale(1.05);
+}
+.playlist-card-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: #FF6B2B;
   border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(255, 107, 43, 0.4);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  padding-left: 2px;
 }
-.c-dot.active {
-  background: var(--orange);
-  transform: scale(1.35);
+.playlist-card:hover .playlist-card-play {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: #ff854f;
+}
+.playlist-card-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  flex-grow: 1;
+}
+.playlist-card-body h4 {
+  color: #1a0a30;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+.playlist-card-body p {
+  color: #555;
+  font-size: 0.75rem;
+  margin: 0;
+  line-height: 1.3;
 }
 .comunicarte-visual img { width:100%; border-radius:var(--radius); transition:transform 0.5s ease; }
 .maca-main-img { transform: scale(1.1); }

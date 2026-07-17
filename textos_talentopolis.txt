@@ -1,6 +1,6 @@
 # CONTENIDO COMERCIAL - TALENTOPOLIS ( Dossier B2B )
 # Última Actualización: 2026-05-08 (rev. 2)
-# Sincronizado con index.html — 12 páginas en orden
+# Sincronizado con index.html — 14 páginas en orden
 # NOTA: Los labels naranjas fueron fusionados con los títulos grandes.
 #       Ya no existen como elementos separados en el HTML.
 
@@ -19,12 +19,12 @@ PÁRRAFO 1: Ayudamos a empresas, instituciones, líderes y expertos a transforma
 PÁRRAFO 2: Como medio de comunicación multiplataforma y productora audiovisual, no solo grabamos: conceptualizamos, ordenamos editorialmente, producimos, editamos y distribuimos. Combinamos una mirada estratégica con la agilidad técnica necesaria para el ecosistema digital actual
 
 MÉTRICAS:
-1. +7.5K — Suscriptores
-2. +10 — Programas/PodCast
-3. +1.3M — Views
-4. +7.2K — Followers de otras RR.SS.
-5. +15.7K — Likes
-6. +35.9K — Horas de visualización
+1. +7.7K — Suscriptores
+2. +11 — Programas/PodCast
+3. +1.6M — Views
+4. +7.8K — Followers de otras RR.SS.
+5. +19.7K — Likes
+6. +45.9K — Horas de visualización
 
 REDES SOCIALES: YouTube / Instagram / LinkedIn / Spotify / Facebook
 
@@ -112,7 +112,7 @@ LISTADO (9 programas):
 2. Del Aula a la Cancha T1-2: El puente entre la formación académica y el mundo laboral real. Coproducción con Universidad Santo Tomás
 3. Mujeres sin Pausa: Conversaciones con mujeres líderes que están transformando sus industrias y entornos
 4. CoffeeBreak con Talento: Conversaciones relajadas y auténticas con talentos diversos en un formato cercano y dinámico
-5. Mujer Hoy Sin Límites TT1-2: Un espacio para potenciar el liderazgo femenino y la equidad en el mundo corporativo
+5. Mujer Hoy Sin Límites T1-2: Un espacio para potenciar el liderazgo femenino y la equidad en el mundo corporativo
 6. Conocimiento Encapsulado: Píldoras de aprendizaje y contenido experto en formatos breves y de alto impacto
 7. Kolumna Laboral: Análisis y opinión sobre las tendencias del mercado laboral chileno y latinoamericano
 8. CISO's Club: Espacio exclusivo para líderes de ciberseguridad, analizando riesgos y tendencias globales
@@ -121,7 +121,7 @@ LISTADO (9 programas):
 ================================================================================
 ### PÁGINA 8: COMUNICARTE
 ================================================================================
-TÍTULO: ComunicArte — [Próximo Lanzamiento]
+TÍTULO: ComunicArte — [Nuevo PodCast]
 DESCRIPCIÓN: Programa conducido por Macarena Saavedra, periodista especializada en comunicación estratégica y liderazgo. Un espacio donde la conversación fluye entre la cultura, el arte y el pensamiento ejecutivo.
 
 INVITADOS:
@@ -133,19 +133,35 @@ INVITADOS:
    Cargo: Actor y Conductor - cine, teatro y TV
    Descripción: Reconocido intérprete y narrador de grandes historias audiovisuales.
 
-3. Dra. Paula Daza
+3. Francisco Vidal
+   Cargo: Ex Vocero de gobierno
+   Descripción: 
+
+4. Dra. Paula Daza
    Cargo: Médica Cirujana y Exsubsecretaria de Salud Pública
    Descripción: Líder en gestión pública de salud con gran cercanía ciudadana.
 
 ================================================================================
-### PÁGINA 9: GALERÍA DE INVITADOS
+### PÁGINA 9: RESILITY
+================================================================================
+TÍTULO: Resility PodCast — [Próximo Lanzamiento]
+DESCRIPCIÓN: Es un programa de entrevistas B2B ejecutivo, que reúne a líderes, directivos y expertos (CTOs, CISOs, CIOs, abogados tech y especialistas financieros) para conversar sobre ciberseguridad empresarial, inteligencia artificial aplicada a negocios, transformación digital, fintech y el marco legal del mundo digital. Conducido por Patricio Campos el founder y CEO de Resility.
+
+================================================================================
+### PÁGINA 10: INGENIA
+================================================================================
+TÍTULO: IngenIA Conmigo — [Próximo PodCast]
+DESCRIPCIÓN: Conversaciones profundas con líderes de industria, académicos y egresados que demuestran el valor real de la ingeniería en Chile. Un PodCast audiovisual que conecta ingeniería, industria y futuro del trabajo, conducido por Juan José Negroni en colaboración con la Universidad Santo Tomás.
+
+================================================================================
+### PÁGINA 11: GALERÍA DE INVITADOS
 ================================================================================
 TÍTULO: Algunos de nuestros [invitados]
 BAJADA: Una pequeña mirada a quienes han sido parte de nuestros distintos programas
 RECURSOS: Carpeta assets/Fotos_para_el_brochure/
 
 ================================================================================
-### PÁGINA 10: SPOTIFY
+### PÁGINA 12: SPOTIFY
 ================================================================================
 TÍTULO: Programas [Spotify]
 SUBTÍTULO: Encuentra todos nuestros contenidos en formato audio para escucharlos donde quieras
@@ -157,15 +173,15 @@ PROGRAMAS (4 cards):
 4. Mujer sin Límites
 
 ================================================================================
-### PÁGINA 11: EQUIPO
+### PÁGINA 13: EQUIPO
 ================================================================================
 TÍTULO: Las personas detrás de [Talentópolis]
 
 INTEGRANTES (foto + nombre son hipervínculo a LinkedIn):
-1. Andrés Cardemil — Dirección Ejecutiva / Conducción — linkedin.com/in/andres-cardemil-oliva/
+1. Andrés Cardemil — Dirección Ejecutiva / Conducción — https://www.linkedin.com/in/andres-cardemil-oliva/
 2. Claudina Villanueva — Producción Ejecutiva Comercial — linkedin.com/in/claudinavillanueva/
-3. Lucas Núñez — Community Manager — linkedin.com/in/lucastalentópolis
-4. Freddy Alexis — Dirección Periodística — linkedin.com/in/freddy-alexis-166873118/
+3. Lucas Núñez — Community Manager — www.linkedin.com/in/lucastalentopólis
+4. Freddy Alexis — Dirección Periodística — https://www.linkedin.com/in/freddy-alexis-166873118/
 
 BANNER PARTNERS (debajo de los integrantes):
 "+ Una amplia, variada y robusta red de Partners y aliados del mundo audiovisual"
@@ -173,7 +189,7 @@ Logos izquierda: ODM / Del Aula a la Cancha / CoffeeBreak / Mujer Sin Pausa
 Logos derecha: CISOs / FF / ComunicArte / Conocimiento Encapsulado
 
 ================================================================================
-### PÁGINA 12: CONTACTO
+### PÁGINA 14: CONTACTO
 ================================================================================
 CTA: Conversemos sobre tu próximo PodCast o contenido audiovisual
 SUB-CTA: Te ayudamos a transformar tu conocimiento, marca o experiencia en un formato profesional, visible y distribuible.

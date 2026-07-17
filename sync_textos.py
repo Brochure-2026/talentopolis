@@ -9,6 +9,8 @@ import os
 import re
 import html as html_sanitizer
 import sys
+import argparse
+from datetime import datetime
 
 
 # Configuración de rutas de archivos
@@ -87,19 +89,31 @@ def get_program_link(title):
         return "https://www.youtube.com/playlist?list=PLRS8xZ-8eLGU3DYqTiZo_Aabjxl0mQLGw"
     return "https://www.youtube.com/@talentopolis"
 
+def get_guest_link(name):
+    n = name.lower()
+    if "rincón" in n or "rincon" in n:
+        return "https://youtu.be/cMhtzgrF0Xk"
+    elif "melo" in n:
+        return "https://youtu.be/xxHRFgUiSqg"
+    elif "vidal" in n:
+        return "https://youtu.be/BPgiid8rdQY"
+    elif "daza" in n:
+        return "https://youtu.be/Srb0CR1WKl0"
+    return "https://www.youtube.com/@talentopolis"
+
 def get_guest_img(name):
     n = name.lower()
     if "rincón" in n or "rincon" in n:
-        return "assets/fotos_invitado_comunicarte/foto-rincon.webp"
+        return "assets/caratulas%20episodios%20comunicarte/ep%201.jpg"
     elif "melo" in n:
-        return "assets/fotos_invitado_comunicarte/foto-melo.webp"
+        return "assets/caratulas%20episodios%20comunicarte/ep%202.jpg"
     elif "daza" in n:
-        return "assets/fotos_invitado_comunicarte/foto-daza.webp"
+        return "assets/caratulas%20episodios%20comunicarte/ep%203.jpg"
     elif "quiroga" in n:
         return "assets/quiroga_youtube.jpg"
     elif "mewes" in n:
         return "assets/mewes.jpg"
-    return "assets/fotos_invitado_comunicarte/foto-rincon.webp"
+    return "assets/caratulas%20episodios%20comunicarte/ep%201.jpg"
 
 def get_spotify_img(name):
     n = name.lower()
@@ -162,9 +176,9 @@ def parse_textos():
     # Separar el documento por páginas
     pages_raw = re.split(r'### PÁGINA \d+:\s*', content)
     
-    # Debe haber 12 páginas más el prefacio inicial
-    if len(pages_raw) < 13:
-        raise ValueError(f"El archivo TXT debe contener las 12 páginas estructuradas con '### PÁGINA X:'. Encontradas: {len(pages_raw)-1}")
+    # Debe haber 14 páginas más el prefacio inicial
+    if len(pages_raw) < 15:
+        raise ValueError(f"El archivo TXT debe contener las 14 páginas estructuradas con '### PÁGINA X:'. Encontradas: {len(pages_raw)-1}")
         
     # Inicializar diccionarios de datos para la plantilla
     p_data = {}
@@ -549,16 +563,51 @@ def parse_textos():
     p_data['COMUNICARTE_DESCRIPCIÓN'] = format_highlights(safe_escape(comunicarte_kv.get('DESCRIPCIÓN', '')))
     
     p_data['COMUNICARTE_GUESTS'] = []
-    for item in guests_list[:3]:
+    for idx, item in enumerate(guests_list[:4]):
+        img_ext = "png" if idx == 3 else "jpg"
+        guest_img = f"assets/caratulas%20episodios%20comunicarte/ep%20{idx+1}.{img_ext}"
         p_data['COMUNICARTE_GUESTS'].append({
-            'GUEST_IMG': get_guest_img(item['name']),
-            'GUEST_NAME': safe_escape(item['name']),
-            'GUEST_ROLE': safe_escape(item['role']),
-            'GUEST_DESC': safe_escape(item['desc'])
+            'GUEST_LINK': get_guest_link(item['name']) if item['name'] else "#",
+            'GUEST_IMG': guest_img,
+            'GUEST_NAME': safe_escape(item['name']) if item['name'] else "",
+            'GUEST_ROLE': safe_escape(item['role']) if item['role'] else "",
+            'GUEST_DESC': safe_escape(item['desc']) if item['desc'] else ""
         })
         
-    # ── PÁGINA 9: GALERÍA DE INVITADOS ──
-    guests_gallery_txt = pages_raw[9].strip()
+    # ── PÁGINA 9: RESILITY ──
+    resility_txt = pages_raw[9].strip()
+    resility_kv = {}
+    for line in resility_txt.split('\n'):
+        if ':' in line:
+            k, v = line.split(':', 1)
+            resility_kv[k.strip().upper()] = v.strip()
+    titulo_escaped = safe_escape(resility_kv.get('TÍTULO', ''))
+    titulo_divided = re.sub(r'\s*(?:—| - )\s*', '<br>', titulo_escaped)
+    titulo_formatted = format_highlights(titulo_divided)
+    p_data['RESILITY_TÍTULO'] = titulo_formatted.replace(
+        'class="section-highlight"',
+        'class="section-highlight" style="color: #0057B8 !important; text-shadow: 0 0 28px rgba(0, 87, 184, 0.15) !important;"'
+    )
+    p_data['RESILITY_DESCRIPCIÓN'] = format_highlights(safe_escape(resility_kv.get('DESCRIPCIÓN', '')))
+    
+    # ── PÁGINA 10: INGENIA ──
+    ingenia_txt = pages_raw[10].strip()
+    ingenia_kv = {}
+    for line in ingenia_txt.split('\n'):
+        if ':' in line:
+            k, v = line.split(':', 1)
+            ingenia_kv[k.strip().upper()] = v.strip()
+    titulo_escaped = safe_escape(ingenia_kv.get('TÍTULO', ''))
+    titulo_divided = re.sub(r'\s*(?:—| - )\s*', '<br>', titulo_escaped)
+    titulo_formatted = format_highlights(titulo_divided)
+    p_data['INGENIA_TÍTULO'] = titulo_formatted.replace(
+        'class="section-highlight"',
+        'class="section-highlight" style="color: #009647 !important; text-shadow: 0 0 28px rgba(0, 150, 71, 0.15) !important;"'
+    )
+    p_data['INGENIA_DESCRIPCIÓN'] = format_highlights(safe_escape(ingenia_kv.get('DESCRIPCIÓN', '')))
+    
+    # ── PÁGINA 11: GALERÍA DE INVITADOS ──
+    guests_gallery_txt = pages_raw[11].strip()
     gg_kv = {}
     for line in guests_gallery_txt.split('\n'):
         if ':' in line:
@@ -567,8 +616,8 @@ def parse_textos():
     p_data['GUESTSGALLERY_TÍTULO'] = format_highlights(safe_escape(gg_kv.get('TÍTULO', '')))
     p_data['GUESTSGALLERY_BAJADA'] = format_highlights(safe_escape(gg_kv.get('BAJADA', '')))
     
-    # ── PÁGINA 10: SPOTIFY ──
-    spotify_txt = pages_raw[10].strip()
+    # ── PÁGINA 12: SPOTIFY ──
+    spotify_txt = pages_raw[12].strip()
     spotify_kv = {}
     spotify_programs = []
     in_sp_programs = False
@@ -600,8 +649,8 @@ def parse_textos():
             'SPOTIFY_ALT': safe_escape(item)
         })
         
-    # ── PÁGINA 11: EQUIPO ──
-    equipo_txt = pages_raw[11].strip()
+    # ── PÁGINA 13: EQUIPO ──
+    equipo_txt = pages_raw[13].strip()
     equipo_kv = {}
     team_members = []
     in_members = False
@@ -620,7 +669,7 @@ def parse_textos():
             m_match = re.match(r'^\d+\.\s*(.*)', line)
             if m_match:
                 full_member = m_match.group(1).strip()
-                parts = re.split(r'\s*—\s*|\s*-\s*', full_member)
+                parts = re.split(r'\s*—\s*|\s+-\s+', full_member)
                 name = parts[0].strip() if len(parts) > 0 else ""
                 role = parts[1].strip() if len(parts) > 1 else ""
                 link = parts[2].strip() if len(parts) > 2 else ""
@@ -649,8 +698,8 @@ def parse_textos():
             'MEMBER_ROLE': safe_escape(item['role'])
         })
         
-    # ── PÁGINA 12: CONTACTO ──
-    contacto_txt = pages_raw[12].strip()
+    # ── PÁGINA 14: CONTACTO ──
+    contacto_txt = pages_raw[14].strip()
     contacto_kv = {}
     footer_datos = {}
     in_datos = False
@@ -744,7 +793,7 @@ def compile_template(variables):
             
     return html
 
-def main():
+def main(dry_run=False):
     log("Iniciando compilador y sincronizador de textos...")
     try:
         # 1. Parsear el archivo de textos
@@ -775,5 +824,33 @@ def main():
         traceback.print_exc()
         sys.exit(1)
 
+def parse_args():
+    """Parsea los argumentos de línea de comandos."""
+    parser = argparse.ArgumentParser(description='Compilador de plantillas Talentópolis')
+    parser.add_argument('--dry-run', action='store_true',
+                        help='Ejecuta en modo de simulación sin modificar archivos')
+    return parser.parse_args()
+
+def validate_txt_structure(content):
+    """Valida que el archivo de textos tenga la estructura correcta.
+    
+    Retorna True si es válido, lanza ValueError si no.
+    """
+    pages = re.findall(r'### PÁGINA \d+:', content)
+    if len(pages) < 14:
+        raise ValueError(f"Estructura inválida. Se esperan 14 páginas pero se encontraron {len(pages)}.")
+    
+    required_sections = ['TÍTULO']
+    for section in required_sections:
+        if section not in content.upper():
+            raise ValueError(f"Falta la sección requerida: {section}")
+    
+    return True
+
 if __name__ == "__main__":
-    main()
+    args = parse_args()
+    
+    if args.dry_run:
+        print("🔄 MODO SIMULACIÓN (dry-run): No se modificarán archivos.")
+    
+    main(dry_run=args.dry_run)

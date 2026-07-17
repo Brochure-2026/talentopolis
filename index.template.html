@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=9">
 <link rel="icon" href="assets/logos_talentopolis/logo-microfono.png" type="image/png">
 </head>
 <body>
@@ -261,23 +261,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2>{{ COMUNICARTE_TÍTULO }}</h2>
         <p class="section-sub">{{ COMUNICARTE_DESCRIPCIÓN }}</p>
         
-        <div class="guest-carousel-container">
-          <div class="guest-carousel">
-            <!-- BEGIN COMUNICARTE_GUESTS -->
-            <div class="guest-card">
+        <div class="comunicarte-playlist">
+          <!-- BEGIN COMUNICARTE_GUESTS -->
+          <a href="{{ GUEST_LINK }}" class="playlist-card" target="_blank" rel="noopener noreferrer">
+            <div class="playlist-card-thumbnail">
               <img src="{{ GUEST_IMG }}" alt="{{ GUEST_NAME }}">
-              <div class="guest-info">
-                <h4>{{ GUEST_NAME }}</h4>
-                <span>{{ GUEST_ROLE }}</span>
-                <p>{{ GUEST_DESC }}</p>
-              </div>
+              <div class="playlist-card-play">▶</div>
             </div>
-            <!-- END COMUNICARTE_GUESTS -->
-          </div>
-        </div>
-        <div class="c-dots">
-          <span class="c-dot"></span>
-          <span class="c-dot"></span>
+            <div class="playlist-card-body">
+              <h4>{{ GUEST_NAME }}</h4>
+              <p>{{ GUEST_ROLE }}</p>
+            </div>
+          </a>
+          <!-- END COMUNICARTE_GUESTS -->
         </div>
       </div>
       <div class="comunicarte-visual fade-up">
@@ -291,6 +287,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             LinkedIn
           </a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ RESILITY ══════ -->
+<section class="section" id="resility">
+  <div class="container">
+    <div class="podcast-grid">
+      <div class="fade-up" style="text-align: left;">
+        <img src="assets/Resility%20podcast/logo%20resility%20podcast.png" alt="Resility Logo" style="max-width: 280px; width: 100%; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.4)); margin-bottom: 20px; display: block; margin-left: 0;">
+        <h2 class="section-title" style="color:var(--white); text-align: left; margin-left: 0;">{{ RESILITY_TÍTULO }}</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.65); font-size:1.05rem; text-align: left; margin-left: 0;">{{ RESILITY_DESCRIPCIÓN }}</p>
+      </div>
+      <div class="fade-up" style="display: flex; justify-content: center; align-items: center;">
+        <img src="assets/Resility%20podcast/patricio%20resility%20podcast.png" alt="Resility" style="max-width: 100%; border-radius: var(--radius); filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6));">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ INGENIA ══════ -->
+<section class="section" id="ingenia">
+  <div class="container">
+    <div class="podcast-grid">
+      <div class="fade-up" style="text-align: left;">
+        <img src="assets/IngenIA%20santo%20tomas/image_extracted_2.png" alt="IngenIA Logo" style="max-width: 280px; width: 100%; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.4)); margin-bottom: 20px; display: block; margin-left: 0;">
+        <h2 class="section-title" style="color:var(--white); text-align: left; margin-left: 0;">{{ INGENIA_TÍTULO }}</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.65); font-size:1.05rem; text-align: left; margin-left: 0;">{{ INGENIA_DESCRIPCIÓN }}</p>
+      </div>
+      <div class="fade-up" style="display: flex; justify-content: center; align-items: center;">
+        <img src="assets/IngenIA%20santo%20tomas/1.png" alt="IngenIA" style="max-width: 100%; border-radius: var(--radius); filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6));">
       </div>
     </div>
   </div>
@@ -581,7 +609,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="footer-col-brand">
           <img src="assets/logos_talentopolis/logo-white.png" alt="Talentópolis">
           <p>{{ CONTACTO_MARCA }}</p>
-          <a href="assets/Brochure_Talentopolis_2026_1.1.pdf" onclick="downloadDossier(event)" class="btn-contact-base btn-dossier">
+          <a href="assets/Brochure_Talent%C3%B3polis_2026.pdf?v=2" download="Brochure_Talentópolis_2026.pdf" class="btn-contact-base btn-dossier">
             📄 Descargar Brochure PDF
           </a>
         </div>

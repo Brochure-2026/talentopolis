@@ -564,8 +564,7 @@ def parse_textos():
     
     p_data['COMUNICARTE_GUESTS'] = []
     for idx, item in enumerate(guests_list[:4]):
-        img_ext = "png" if idx == 3 else "jpg"
-        guest_img = f"assets/caratulas%20episodios%20comunicarte/ep%20{idx+1}.{img_ext}"
+        guest_img = f"assets/caratulas%20episodios%20comunicarte/ep%20{idx+1}.webp"
         p_data['COMUNICARTE_GUESTS'].append({
             'GUEST_LINK': get_guest_link(item['name']) if item['name'] else "#",
             'GUEST_IMG': guest_img,

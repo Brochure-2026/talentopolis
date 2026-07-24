@@ -524,6 +524,20 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   }
 }
 
+.podcast-section-logo {
+  max-width: 280px;
+  width: 100%;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.4));
+  margin-bottom: 20px;
+  display: block;
+  margin-left: 0;
+}
+.podcast-host-img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6));
+}
+
 /* ══════════ RESILITY ══════════ */
 #resility {
   background: var(--dark);
@@ -634,9 +648,10 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
 .comunicarte-playlist {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 10px;
   margin-top: 15px;
   width: 100%;
+  max-width: 520px;
 }
 @media (max-width: 768px) {
   .comunicarte-playlist {
@@ -677,16 +692,16 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   background: #FF6B2B;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
-  font-size: 1.1rem;
-  box-shadow: 0 4px 15px rgba(255, 107, 43, 0.4);
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(255, 107, 43, 0.4);
   transition: transform 0.3s ease, background-color 0.3s ease;
   padding-left: 2px;
 }
@@ -695,7 +710,7 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   background: #ff854f;
 }
 .playlist-card-body {
-  padding: 12px;
+  padding: 8px 10px;
   display: flex;
   flex-direction: column;
   background: var(--white);
@@ -703,13 +718,13 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
 }
 .playlist-card-body h4 {
   color: #1a0a30;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  margin: 0 0 4px 0;
+  margin: 0 0 2px 0;
 }
 .playlist-card-body p {
   color: #555;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   margin: 0;
   line-height: 1.3;
 }
@@ -783,7 +798,19 @@ h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
   background: #0A66C2;
   box-shadow: 0 4px 16px rgba(10, 102, 194, 0.4);
 }
-.maca-btn-li:hover { box-shadow: 0 8px 28px rgba(10, 102, 194, 0.6); } /* Reducido un poco para evitar que se corte */
+.maca-btn-li:hover { box-shadow: 0 8px 28px rgba(10, 102, 194, 0.6); }
+
+.maca-btn-yt {
+  background: #FF0000;
+  box-shadow: 0 4px 16px rgba(255, 0, 0, 0.4);
+}
+.maca-btn-yt:hover { box-shadow: 0 8px 28px rgba(255, 0, 0, 0.6); }
+
+.maca-btn-blue {
+  background: #0052CC;
+  box-shadow: 0 4px 16px rgba(0, 82, 204, 0.4);
+}
+.maca-btn-blue:hover { box-shadow: 0 8px 28px rgba(0, 82, 204, 0.6); }
 
 /* ══════════ VIDEOS ══════════ */
 #videos { padding: 20px 0; display: flex; flex-direction: column; justify-content: center; min-height: 100vh; overflow: visible; position: relative; }
